@@ -1,0 +1,38 @@
+/* Home.module.css */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    grid-gap: 20px; /* Расстояние между блоками */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .block,
+  .squareBlock {
+    background-color: #80b3cc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .block {
+    grid-column: span 2; /* Расширяем блок на две колонки */
+  }
+  
+  .squareBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .squareBlock h3 {
+    color: #fff;
+  }
+  
+  .squareBlock p {
+    color: #333;
+  }
+  

@@ -1,0 +1,23 @@
+/* Header.module.css */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0099cc; /* голубой цвет */
+    height: 60px;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .block {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .block:hover {
+    background-color: #007799; /* темнее голубой для выделения при наведении */
+  }
+  
