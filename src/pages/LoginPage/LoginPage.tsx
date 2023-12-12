@@ -1,12 +1,16 @@
 import css from "./LoginPage.module.css";
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import {SignUp}  from "../../services/auth.service";
 import Cookies from "js-cookie"
-import { Navigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 export default function LoginPage() {
+  const navigete  = useNavigate()
   const [data, setData] = useState({ email: "" });
 
-  const hendler = (e: any) => {
+  const cook = Cookies.get('token');
+
+
+  const hendler = (e:  React.ChangeEvent<HTMLInputElement>) => {
     setData((prev) => {
       return {
         ...prev,
@@ -23,13 +27,21 @@ export default function LoginPage() {
       Cookies.set('token' , dat.data.token,{
 expires :30,
       });
-      <Navigate  to='/' />
-      // Do something with the result 'lala'
+      navigete('/');
     } catch (error) {
-      // Handle any errors that occur during SignUp
+    
       console.error("Error during SignUp:", error);
     }
   };
+  useEffect(() =>  {
+ 
+    
+  
+    if (cook) {
+      console.log('Redirecting to /signin');
+      navigete('/');
+    }
+  },[cook])
   
   return (
     <div>
