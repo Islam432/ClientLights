@@ -28,3 +28,4 @@ export default function ProtecteRoute  ({children}: ProtectedRouteProps)  {
 export default function protected({ children }: ProtectedRouteProps) {
   
 } */
+

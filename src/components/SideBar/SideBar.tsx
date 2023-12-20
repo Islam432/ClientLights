@@ -73,7 +73,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 
-export const SideBar = () => {
+export  const SideBar = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -87,9 +87,9 @@ export const SideBar = () => {
   
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box  sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar sx={{bgcolor: 'black'}} position="fixed" open={open}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -116,7 +116,7 @@ export const SideBar = () => {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={open} 
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
@@ -181,6 +181,8 @@ export const SideBar = () => {
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
       </Main>
+     
     </Box>
   );
 }
+
