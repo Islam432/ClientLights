@@ -1,0 +1,18 @@
+/* Footer.module.css */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0099cc; /* голубой цвет */
+    color: white;
+    height: 80px;
+  }
+  
+  .block {
+    cursor: pointer;
+  }
+  
+  .block:hover {
+    text-decoration: underline;
+  }
+  
