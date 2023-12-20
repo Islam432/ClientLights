@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage/HomePage.tsx";
 import SideBar from "./components/SideBar/SideBar.tsx";
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import ProtecteRoute from './protectedRoute/protecteRoute';
+import { AufPage } from "./pages/AufPage/AufPage.tsx";
+
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"signin",
         element: <LoginPage />  
+      }, 
+      {
+        path:"signap",
+        element: <AufPage />  
       }, 
     ],
   },

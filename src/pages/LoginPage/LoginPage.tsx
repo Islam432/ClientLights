@@ -1,59 +1,56 @@
 import css from "./LoginPage.module.css";
-import {  useEffect, useState } from "react";
-import {SignUp}  from "../../services/auth.service";
-import Cookies from "js-cookie"
-import {  useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { SignUp, getData } from "../../services/auth.service";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../App";
+
 export default function LoginPage() {
-  const navigete  = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState({ email: "" });
+  const [cook, setCook] = useState(Cookies.get('token'));
+  const {auth} = useContext(AppContext)
 
-  const cook = Cookies.get('token');
-
-
-  const hendler = (e:  React.ChangeEvent<HTMLInputElement>) => {
-    setData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
+  const handler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
+
   const onSubmit = async (): Promise<void> => {
     try {
-      const dat = await SignUp(data);
-      console.log(dat);
+       const dat = await SignUp(data);
+      console.log(dat.config.data);
       
-      
-      Cookies.set('token' , dat.data.token,{
-expires :30,
+      const newToken = dat.data.token;
+      auth.login(dat.data.token)
+      Cookies.set('token', newToken, {
+        expires: 30,
       });
-      navigete('/');
+      setCook(newToken); 
     } catch (error) {
-    
       console.error("Error during SignUp:", error);
     }
   };
-  useEffect(() =>  {
- 
-    
-  
+
+  useEffect(() => {
     if (cook) {
-      console.log('Redirecting to /signin');
-      navigete('/');
+      console.log('Redirecting to /');
+      navigate('/');
     }
-  },[cook])
+  }, [cook, navigate]);
+
+
   
   return (
     <div>
       <div className={css.block}>
         <h1>LoginPage</h1>
-        <input onChange={hendler} name="email" />
+        <input onChange={handler} name="email" />
         <button onClick={onSubmit}>click</button>
         <div>{data.email}</div>
       </div>
     </div>
   );
 }
-
- 
- 

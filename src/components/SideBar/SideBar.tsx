@@ -1,9 +1,9 @@
- import React from 'react'
+import React from 'react'
 
-export default function SideBar() {
+const SideBar = () => {
   return (
-    <div>SideBar lala
-        
-    </div>
+    <div>SideBar</div>
   )
 }
+
+export default SideBar
