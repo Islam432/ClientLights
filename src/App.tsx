@@ -36,9 +36,9 @@ function App() {
   const login = useCallback(
    (token: string) => {
      setUser(token)
-     navigate('/')
+    //  navigate('/')
    },
-   [navigate, setUser]
+   [ setUser]
  )
  const logout = useCallback(() => {
    setUser('')

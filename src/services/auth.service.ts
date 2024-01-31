@@ -6,6 +6,6 @@ export function SignUp(data:any){
 }
 
 export function getData(data:any){
-
-    return axios.post("http://localhost:3000/api/v1/test",data)
+console.log(data)
+    return axios.post("http://localhost:3000/api/v1/test",{data})
 }

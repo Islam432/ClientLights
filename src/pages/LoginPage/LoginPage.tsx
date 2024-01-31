@@ -1,6 +1,6 @@
 import css from "./LoginPage.module.css";
 import { useContext, useEffect, useState } from "react";
-import { SignUp, getData } from "../../services/auth.service";
+import { SignUp, getData,  } from "../../services/auth.service";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../App";
@@ -20,8 +20,8 @@ export default function LoginPage() {
 
   const onSubmit = async (): Promise<void> => {
     try {
-       const dat = await SignUp(data);
-      console.log(dat.config.data);
+       const dat = await getData(data);
+      console.log(dat);
       
       const newToken = dat.data.token;
       auth.login(dat.data.token)
@@ -41,7 +41,7 @@ export default function LoginPage() {
     }
   }, [cook, navigate]);
 
-
+ 
   
   return (
     <div>
