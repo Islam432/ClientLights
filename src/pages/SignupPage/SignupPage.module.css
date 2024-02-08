@@ -15,12 +15,13 @@
     /* justify-content: center; */
     box-shadow: 0 3px 5px rgb(200, 196, 196);
      width:450px;
-    height:550px;
+    height:550px ;
     border-radius: 30px;
 }
 .title{
     text-align: center;
-    margin-top: 50px;
+    margin: 20px;
+    padding-top: 20px;
 }
 .child{
     display: flex;
@@ -73,9 +74,6 @@ justify-content: center;
     position: absolute;
     right: 70px;
     bottom: 20px;
-}
-.pass{
-    color: gray;
 }
 .error{
     display: flex;
