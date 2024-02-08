@@ -12,7 +12,7 @@ import logo3 from "../../assets/logo3.svg"
 interface HomePageProps {
   // определите свои пропсы здесь, если есть
 }
-//comment
+//comment 
 
 const HomePage: React.FC<HomePageProps> = () => {
   const { auth } = useContext(AppContext);
