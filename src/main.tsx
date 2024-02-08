@@ -7,7 +7,9 @@ import HomePage from "./pages/HomePage/HomePage.tsx";
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import ProtecteRoute from "./protectedRoute/protecteRoute";
 import { SideBar } from "./components/SideBar/SideBar.tsx";
-import AboutPage from "./pages/AboutPage/AboutPage.tsx";
+import { AboutPage } from "./pages/AboutPage/AboutPage.tsx";
+import LightPage, {} from './pages/LightPage/LightPage.tsx'
+import Layout from "./components/Layout/Layout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        element: <ProtecteRoute children={<SideBar />} />,
+        element: <ProtecteRoute children={<Layout />} />,
 
         children: [
           {
@@ -26,7 +28,12 @@ const router = createBrowserRouter([
             path: "homepage",
             element: <HomePage />,
           },
-          { path: "About", element: <AboutPage /> },
+          { path: "about", element: <AboutPage /> },
+          {path: "Traffic", element:<LightPage/>},
+
+  
+          {path:"trash", element:'' },
+          {path:"spam", element: ' '}
         ],
       },
       {

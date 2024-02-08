@@ -3,8 +3,7 @@ interface HomePageProps {
     // определите свои пропсы здесь, если есть
 }
 
-const HomePage: React.FC<HomePageProps> = () => {
-    
+const LightPage: React.FC<HomePageProps> = () => {
     return (
         <div className={css.block}>
             <h1>
@@ -15,4 +14,4 @@ const HomePage: React.FC<HomePageProps> = () => {
     );
 };
 
-export default HomePage;
+export default LightPage;
