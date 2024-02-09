@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './About.module.css'
 
 export const AboutPage = () => {
   return (
-    <div>
+    <div className={styles.about}>
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
           enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
@@ -16,5 +16,6 @@ export const AboutPage = () => {
           consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
           sapien faucibus et molestie ac.
     </div>
+    
   )
 }

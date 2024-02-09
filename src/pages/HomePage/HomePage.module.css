@@ -134,7 +134,7 @@
 .block4{
  width: 1440px;
 height: 512px;
-padding: 40px;
+/* padding: 40px; */
  margin: 0 auto;
  
 }
@@ -146,11 +146,11 @@ padding: 40px;
  
 }
 .blockmini{
- width: 1440px;
+ /* width: 1440px; */
  height: 512px;
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
- column-gap: 40px;
- justify-items: center;
+ display: flex;
+ 
+ /* column-gap: 40px; */
+ justify-content: space-around;
  align-items: center;
 }
