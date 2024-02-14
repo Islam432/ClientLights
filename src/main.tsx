@@ -8,6 +8,7 @@ import SideBar from "./components/SideBar/SideBar.tsx";
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import ProtecteRoute from './protectedRoute/protecteRoute';
 import { AufPage } from "./pages/AufPage/AufPage.tsx";
+import Profile from "./pages/ProfilePage/Profile.tsx";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
           {
             path: "homepage",
             element: <HomePage />,   
+          },
+          {
+            path: "profile",
+            element: <Profile />,   
           },
         ]
       },

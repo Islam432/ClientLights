@@ -1,4 +1,6 @@
 
+
+
 import './App.css'
 import {  Outlet as RouterOutlet } from 'react-router-dom';
 
@@ -59,7 +61,7 @@ function App() {
    return (
    <>
 
-<AppContext.Provider value={{ auth ,login,logout} as AppContextData}>
+<AppContext.Provider value={{ auth } as AppContextData}>
 <RouterOutlet/>
  </AppContext.Provider>
 

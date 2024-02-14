@@ -20,7 +20,7 @@ export default function LoginPage() {
 
   const onSubmit = async (): Promise<void> => {
     try {
-       const dat = await getData(data);
+       const dat = await SignUp(data);
       console.log(dat);
       
       const newToken = dat.data.token;
