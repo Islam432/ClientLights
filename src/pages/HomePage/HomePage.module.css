@@ -13,7 +13,7 @@
  .block1{
    margin: 0 auto;
   height: 1024px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +28,8 @@
    text-align: center;
    font-size: 30px;
    color: #86C232;
+   font-family: 'Lato', sans-serif;
+
  }
  .title{
    text-align: center;
@@ -35,9 +37,10 @@
    font-weight: 700;
    margin:0 auto;
    font-size: 76px;
+   font-family: 'Merriweather', serif;
  }
  .block2{
-   width: 100%;
+   /* width: 100%; */
    height: 512px;
    margin: 0 auto;
    display: flex;
@@ -46,13 +49,19 @@
  }
  .text2{
    color: #FDFFFF;
-   width: 825px;
+   width: 805px;
    text-align: center  ;
+   font-family: 'Lato', sans-serif;
+
+   font-size: 25px;
+
  }
  .block3{
-   width: 100%;
+   /* width: 100%; */
    height: 1024px;
    margin: 0 auto;
+   font-family: 'Lato', sans-serif;
+   
    
    
    
@@ -116,10 +125,19 @@
    font-size: 35px;
  }
  .blockk{
-   width: 1440px;
+   /* width: 100%; */
    margin: 0 auto;
    height: 1024px;
- }
+
+   
+ 
+  }
+  .btndiv{
+    display: flex;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+  }
  .btn{
    background-color: #86C232;
    width: 240px;
@@ -127,12 +145,12 @@
    color: #FDFFFF;
    border-radius: 30px;
    border: none;
-   margin: 95px 630px ;
+   margin: 95px auto ;
 
 
  }
 .block4{
- width: 100%;
+ /* width: 100%; */
 height: 512px;
 padding: 40px;
  margin: 0 auto;
@@ -142,6 +160,7 @@ padding: 40px;
  text-align: center;
  font-size: 35px;
  font-weight: 700;
+ font-family: 'Merriweather', sans-serif;
  
  
 }

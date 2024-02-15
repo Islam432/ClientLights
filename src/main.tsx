@@ -10,6 +10,8 @@ import ProtecteRoute from './protectedRoute/protecteRoute';
 
 import { SideBar } from "./components/SideBar/SideBar.tsx";
 import {AufPage} from "./pages/SignupPage/SignupPage.tsx";
+import { AboutPage } from "./pages/AboutPage/AboutPage.tsx";
+import Layout from "./components/Layout/Layout.tsx";
 
 
 const router = createBrowserRouter([
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
       
-          element: <ProtecteRoute children={<SideBar />} />, 
+          element: <ProtecteRoute children={<Layout />} />, 
        
          children: [
           {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
             path: "homepage",
             element: <HomePage />,   
           },
+          {
+            path:'about',
+            element:<AboutPage/>
+          }
         ]
       },
       {
