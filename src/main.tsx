@@ -10,6 +10,8 @@ import ProtecteRoute from './protectedRoute/protecteRoute';
 
 import { SideBar } from "./components/SideBar/SideBar.tsx";
 import {AufPage} from "./pages/SignupPage/SignupPage.tsx";
+import MapPage from "./pages/MapPage/MapPage.tsx";
+import Profile from "./pages/ProfilePage/ProfilePage.tsx";
 
 
 const router = createBrowserRouter([
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
           {
             path: "homepage",
             element: <HomePage />,   
+          },
+          {
+            path: "map",
+            element: <MapPage />,   
+          },
+          {
+            path: "profile",
+            element: <Profile />,   
           },
         ]
       },

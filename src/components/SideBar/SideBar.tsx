@@ -94,12 +94,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 const linksTwo = [
   {
-    path:"/traffic",
+    path:"/map",
     title: 'Traffic',
     icon: <FaHome />,
   },
   {
-    path: "/trash",
+    path: "/profile",
     title: 'Trash',
     icon: <BiLogoJoomla />
   },
