@@ -21,6 +21,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { BiLogoJoomla } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const drawerWidth = 240;
 
@@ -228,6 +229,7 @@ export function SideBar() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, }}>
         <Outlet/>
+        <Footer/>
        
       </Box>
     </Box>
