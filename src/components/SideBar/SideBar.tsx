@@ -104,7 +104,7 @@ const linksTwo = [
     icon: <BiLogoJoomla />
   },
   {
-    path: "/spam",
+    path: "/systems",
     title: 'Spam',
     icon: <BiLogoJoomla />
   }

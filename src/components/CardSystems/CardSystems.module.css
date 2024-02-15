@@ -1,0 +1,39 @@
+.conteiner{
+    width: 90%;
+margin: 10px;
+height: 100px;
+    display: flex;
+ border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.iconblok{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+  
+}
+.textblok{
+display: flex;
+flex-direction: column;
+gap: 0.7rem;
+
+}
+.textblok h2{
+    font-family: Lato;
+    font-weight: 400;
+    color: #FDFFFF;
+    font-size:clamp(20px, 3vw, 25px);
+}
+.textblok p{
+    font-family: Lato;
+    font-weight: 400;
+    color: #A3A5A5;
+    font-size:clamp(14px, 3vw, 16px);
+}
+.conteiner:hover{
+    transition: 0.5s;
+    box-shadow: 1px 2px 3px 1px  #61892F;
+    cursor: pointer;
+}
