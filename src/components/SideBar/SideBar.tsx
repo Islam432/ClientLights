@@ -21,6 +21,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import { BiLogoJoomla } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router-dom';
+import { PiCpu } from "react-icons/pi";
+import { HiOutlineMapPin } from "react-icons/hi2";
+import { LuSettings } from "react-icons/lu";
+import { RxAvatar } from "react-icons/rx";
 
 const drawerWidth = 240;
 
@@ -96,17 +100,19 @@ const linksTwo = [
   {
     path:"/map",
     title: 'Traffic',
-    icon: <FaHome />,
+    icon: <HiOutlineMapPin />,
   },
   {
     path: "/profile",
-    title: 'Trash',
-    icon: <BiLogoJoomla />
+    title: 'profile',
+    icon: <RxAvatar />
   },
   {
-    path: "/systems",
-    title: 'Spam',
-    icon: <BiLogoJoomla />
+    
+    
+    path: "/setting",
+    title: 'setting',
+    icon: <LuSettings />
   }
 
 
@@ -126,9 +132,9 @@ const links = [
   icon: <FaHome />,
 },
 {
-  path: "/about",
-  title: 'About',
-  icon: <BiLogoJoomla />
+  path: "/systems",
+  title: 'systems',
+  icon: <PiCpu />
 }
 ]
 
@@ -166,7 +172,7 @@ export function SideBar() {
             <MenuIcon style={{color:'#506f2d'}} />
           </IconButton>
         </DrawerHeader>
-        <Divider />
+   
         <List>
           {links.map((data, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>
@@ -194,9 +200,7 @@ export function SideBar() {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
-        <Divider />
-        <List>
+       
           {linksTwo.map((data, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
