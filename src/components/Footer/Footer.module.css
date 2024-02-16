@@ -4,6 +4,7 @@
     background: #222629;
     border-top: 3px solid #61892F;
     padding-bottom: 30px;
+    transition: 1s ease-in-out;
     font-family: 'Lato', sans-serif; /* Указываем правильное название шрифта */
 }
 
@@ -25,14 +26,10 @@
     gap: 20px;
     width: 200px;
 }
-.block2 {
-    
-    
-    
-}
-.block3{
-   
-    
+.block4{
+    border-bottom: 1px solid transparent;
+    transition: 0.5s ease-out;
+
 }
 a{
     color: #6B6E70;
@@ -43,3 +40,11 @@ a{
     display: grid;
     gap: 40px;
 }
+.footer:hover .block4{
+    border-bottom: 1px solid #61892F;
+}
+@media (max-width: 550px){
+    .block{
+        display: none;
+    }
+} 

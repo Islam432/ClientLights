@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <p>THE Tech is an engineering company that provides robust, innovative solutions.</p>
       </div>
       <div className={styles.block2}>
-        <h3 style={{ color:"white"}}>Websites</h3>
+        <h3 style={{ color:"white",marginBottom:'40px'}}>Websites</h3>
         <div className={styles.cont}>
         <a href="">www.english.gg.go.kr</a>
         <a href="">www.khayah.org</a>
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         
       </div>
       <div className={styles.block3}>
-      <h3 style={{ color:"white"}}>Contact Us</h3>
+      <h3 style={{ color:"white", marginBottom:'40px'}}>Contact Us</h3>
       <div  className={styles.cont}>
       <a>+82 070-5121-2198</a>
       <a>+82 82-31-120</a>
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
       </div>
       
       </div>
-      <div className={styles.block4}>© 2024 Smart Crosswalk. All Rights Reserved.</div>
+      <div className={styles.block4}>© 2024 Smart Cross<span style={{color:"#75b32a", fontFamily:"monospace"}}>walk</span>. All Rights Reserved.</div>
 
       
     </div>
