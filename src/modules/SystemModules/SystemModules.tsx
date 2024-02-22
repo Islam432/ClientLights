@@ -10,17 +10,17 @@ const SystemModules = () => {
             location:"Адрес: ул. Ахунбаева/ул. Безымянная"
         },
         cardTwo:{
-            id:1,
+            id:2,
             title: "ID: 02A-B",
             location:"Адрес: ул. Ахунбаева/ул. Безымянная"
         },
         cardTree:{
-            id:1,
+            id:3,
             title: "ID: 01T",
             location:"Адрес: ул. Тыналиева 1/2"
         },
         cardFour:{
-            id:1,
+            id:4,
             title: "ID: 02T",
             location:"Адрес: ул. Тыналиева 1/2"
         },

@@ -1,1 +1,50 @@
-/* Footer.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.footer {
+    width: 100%;
+    background: #222629;
+    border-top: 3px solid #61892F;
+    padding-bottom: 30px;
+    transition: 1s ease-in-out;
+    font-family: 'Lato', sans-serif; /* Указываем правильное название шрифта */
+}
+
+.container {
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: 'Lato', sans-serif; /* Также используем Lato */
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto;
+    color: #6B6E70;
+    font-size: 13px;
+}
+.block{
+    display:grid;
+    padding-top: 50px;
+    gap: 20px;
+    width: 200px;
+}
+.block4{
+    border-bottom: 1px solid transparent;
+    transition: 0.5s ease-out;
+
+}
+a{
+    color: #6B6E70;
+    padding: 0;
+    margin: 0;
+}
+.cont{
+    display: grid;
+    gap: 40px;
+}
+.footer:hover .block4{
+    border-bottom: 1px solid #61892F;
+}
+@media (max-width: 550px){
+    .block{
+        display: none;
+    }
+} 

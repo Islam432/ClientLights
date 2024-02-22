@@ -25,6 +25,7 @@ import { PiCpu } from "react-icons/pi";
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { LuSettings } from "react-icons/lu";
 import { RxAvatar } from "react-icons/rx";
+import Footer from '../Footer/Footer';
 
 const drawerWidth = 240;
 
@@ -231,8 +232,8 @@ export function SideBar() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, }}>
-        <DrawerHeader />
         <Outlet/>
+        <Footer/>
        
       </Box>
     </Box>

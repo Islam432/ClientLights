@@ -1,6 +1,14 @@
-.block{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+body, html{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+.about{
+
+    
+    overflow: hidden; /* Предотвращаем появление скролла */
+    width: 100%;
+    color: #777;
+    background: #222629;
 }

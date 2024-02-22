@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { GiPencil } from "react-icons/gi";
 import { AppContext } from "../../App";
 import { useState } from "react";
-
+import { TbCameraPlus } from "react-icons/tb";
 const ProfileModule = () => {
   const data = {
     name: "islam",
@@ -19,6 +19,7 @@ const ProfileModule = () => {
     name: "",
     email: "",
   });
+  const [isHovered, setIsHovered] = useState(false);
   const [avatar, setAvatar] = useState(
     "../../../public/mainComponentImage/girls.png"
   );
@@ -52,8 +53,9 @@ const ProfileModule = () => {
         <h3>My Profile</h3>
         <div className={style.bordered}>
           <div className={style.imgBlok}>
-            <Avatar sx={{ width: 140, height: 140 }} src={avatar} />
-
+           
+           <Avatar className={style.avatar} sx={{ width: 140, height: 140 ,  opacity: isHovered ? 0.2 : 1 }} src={avatar} />
+         
             <input
               id="fileInput"
               type="file"
@@ -62,7 +64,8 @@ const ProfileModule = () => {
               onChange={handleFileChange}
             />
 
-            <GiPencil className={style.pensel} onClick={openFilePicker} />
+            <TbCameraPlus className={style.pensel} onClick={openFilePicker}  onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)} />
           </div>
 
           <div className={style.cont}>

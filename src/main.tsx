@@ -14,6 +14,8 @@ import MapPage from "./pages/MapPage/MapPage.tsx";
 import Profile from "./pages/ProfilePage/ProfilePage.tsx";
 import SystemPage from "./pages/SystemPage/SystemPage.tsx";
 import SystemModules from "./modules/SystemModules/SystemModules.tsx";
+import Layout from "./components/Layout/Layout.tsx";
+import DynamicsRoute from "./pages/DynamicsRoute/DynamicsRoute.tsx";
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
       
-          element: <ProtecteRoute children={<SideBar />} />, 
+          element: <ProtecteRoute children={<Layout />} />, 
        
          children: [
           {
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
               element: <SystemModules />,
             },
             { path: ":id",
-            element: <SystemPage/>
+            element: <DynamicsRoute/>
           }
           ]
           },
