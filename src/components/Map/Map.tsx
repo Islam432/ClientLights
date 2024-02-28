@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { LoadScript } from '@react-google-maps/api';
+import css from './Map.module.css'
 
 function Map() {
     const mapRef = useRef(null);
@@ -112,44 +113,85 @@ function Map() {
             ]
         });
 
-        // const markerIcon = {
-        //     path: '../../../public/Vector.svg', // URL иконки метки
-        //     fillColor: "green",
-        //     fillOpacity: 0.6,
-        //     strokeWeight: 0,
-        //     rotation: 0,
-        //     scale: 2,
-        //     anchor: new google.maps.Point(0, 20),
-        // };
 
+        const markerIcon = {
+            url: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+                `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#86C232">
+                  <path d="M0 0h24v24H0z" fill="none" stroke="none"/>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>` //#86C232
+              )}`, // URL вашей пользовательской иконки
+            scaledSize: new window.google.maps.Size(40, 40), // Размер иконки
+            origin: new window.google.maps.Point(0, 0), // Начальная точка для рисования иконки
+            anchor: new window.google.maps.Point(20, 40) // Точка, вокруг которой поворачивается иконка
+        }
+        
         const markerRealist1 = new window.google.maps.Marker({
             position: { lat: 42.838986, lng: 74.568732 },
             map: map,
             title: 'Реалист', // 42.838986, 74.568732
+            icon: markerIcon
         });
 
         const markerRealist2 = new window.google.maps.Marker({
             position: { lat: 42.838960, lng: 74.568576 },
             map: map,
-            title: 'Реалист' //42.838960, 74.568576
+            title: 'Реалист', //42.838960, 74.568576
+            icon: markerIcon
         });
 
         const markerNoname1 = new window.google.maps.Marker({
             position: { lat: 42.843862, lng: 74.564593 },
             map: map,
-            title: 'Безымянная' // 42.843862, 74.564593
+            title: 'Безымянная', // 42.843862, 74.564593
+            icon: markerIcon
+            
         });
 
         const markerNoname2 = new window.google.maps.Marker({
             position: { lat: 42.843988, lng: 74.564593 },
             map: map,
-            title: 'Безымянная' // 42.843988, 74.564593
+            title: 'Безымянная', // 42.843988, 74.564593
+            icon: markerIcon
         });
+        
+        // Определение типов для TypeScript
+        interface LatLng {
+            lat: number;
+            lng: number;
+        }
+        
+        const noname = document.getElementById('noname');
+        const realist = document.getElementById('realist')
+        if (realist) {
+            realist.addEventListener('click', () => {
+                const newCenter: LatLng = { lat: 42.838960, lng: 74.568576 };
+                map.panTo(newCenter)
+            });
+        }
+
+        if (noname) {
+            noname.addEventListener('click', () => {
+                const newCenter: LatLng = { lat: 42.843988, lng: 74.564593 };
+                map.panTo(newCenter)
+            });
+        }
 
     }, [mapRef]);
 
+    
+
     return (
-        <div ref={mapRef} style={{ height: '100vh', width: '100%' }}></div>
+        <>
+            <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
+                <div ref={mapRef} style={{ height: '100vh', width: '100%' }}></div>
+                <div className={css.footer}>
+                    <a href='#' id="noname">Location 1: st. Ahunbaeva-Bezymyannaya</a>
+                    <a href='#' id="realist">Location 2: st. Tynalieva</a>
+                </div>
+            </div>
+            
+        </>
     );
 }
 
