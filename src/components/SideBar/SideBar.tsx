@@ -21,6 +21,11 @@ import MailIcon from '@mui/icons-material/Mail';
 import { BiLogoJoomla } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router-dom';
+import { PiCpu } from "react-icons/pi";
+import { HiOutlineMapPin } from "react-icons/hi2";
+import { LuSettings } from "react-icons/lu";
+import { RxAvatar } from "react-icons/rx";
+import Footer from '../Footer/Footer';
 
 const drawerWidth = 240;
 
@@ -94,19 +99,21 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 const linksTwo = [
   {
-    path:"/traffic",
+    path:"/map",
     title: 'Traffic',
-    icon: <FaHome />,
+    icon: <HiOutlineMapPin />,
   },
   {
-    path: "/trash",
-    title: 'Trash',
-    icon: <BiLogoJoomla />
+    path: "/profile",
+    title: 'profile',
+    icon: <RxAvatar />
   },
   {
-    path: "/spam",
-    title: 'Spam',
-    icon: <BiLogoJoomla />
+    
+    
+    path: "/setting",
+    title: 'setting',
+    icon: <LuSettings />
   }
 
 
@@ -126,9 +133,9 @@ const links = [
   icon: <FaHome />,
 },
 {
-  path: "/about",
-  title: 'About',
-  icon: <BiLogoJoomla />
+  path: "/systems",
+  title: 'systems',
+  icon: <PiCpu />
 }
 ]
 
@@ -166,7 +173,7 @@ export function SideBar() {
             <MenuIcon style={{color:'#506f2d'}} />
           </IconButton>
         </DrawerHeader>
-        <Divider />
+   
         <List>
           {links.map((data, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>
@@ -194,9 +201,7 @@ export function SideBar() {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
-        <Divider />
-        <List>
+       
           {linksTwo.map((data, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
@@ -228,6 +233,7 @@ export function SideBar() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, }}>
         <Outlet/>
+        <Footer/>
        
       </Box>
     </Box>
