@@ -40,15 +40,15 @@
     outline: none;
 
 }
-a{
+.link{
     font-family: 'Lato', sans-serif;
     text-decoration: none;
     margin: 20px auto ;
-border-bottom: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     color: #61892F;
     transition: 0.5s ease;
 }
- a:hover{
+ .link:hover{
     border-bottom: 1px solid #61892F;
  }
 
@@ -69,13 +69,22 @@ justify-content: center;
     color: #fff;
     font-size: large;
 }
+.btn:hover{
+    background-color: #61892F;
+}
 .icon{
     position: absolute;
     right: 70px;
     bottom: 20px;
 }
 .pass{
+    text-decoration: none;
+    padding-top: 30px;
     color: gray;
+}
+.pass:hover{
+    color: #61892F;
+    text-decoration: underline;
 }
 .error{
     display: flex;

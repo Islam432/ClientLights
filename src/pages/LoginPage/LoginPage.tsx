@@ -99,7 +99,7 @@ export default function LoginPage() {
         </div>
        
         <button className={css.btn} onClick={onSubmit}>
-          Login
+          Log in
         </button>
         <Link to="/signap" className={css.link}>
           CREATE ACCOUNT
