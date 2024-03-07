@@ -17,7 +17,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { HiOutlineDocumentText } from "react-icons/hi2";
 import { BiLogoJoomla } from "react-icons/bi";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from 'react-router-dom';
@@ -111,9 +111,9 @@ const linksTwo = [
   {
     
     
-    path: "/setting",
-    title: 'setting',
-    icon: <LuSettings />
+    path: "/docs",
+    title: 'docs',
+    icon: <HiOutlineDocumentText />
   }
 
 

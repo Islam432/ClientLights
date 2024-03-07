@@ -5,6 +5,7 @@ import { GiPencil } from "react-icons/gi";
 import { AppContext } from "../../App";
 import { useState } from "react";
 import { TbCameraPlus } from "react-icons/tb";
+import DeleteAccount from "../../components/CardDelet/CardDelete";
 const ProfileModule = () => {
   const data = {
     name: "islam",
@@ -20,21 +21,22 @@ const ProfileModule = () => {
     email: "",
   });
   const [isHovered, setIsHovered] = useState(false);
+  const [open, SetOpen] = useState(false);
+
   const [avatar, setAvatar] = useState(
     "../../../public/mainComponentImage/girls.png"
   );
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-      change.name && change.email && change.email.includes("@")
-    
+    e.preventDefault();
+    change.name && change.email && change.email.includes("@")
       ? sendFormData()
       : console.log("  введите  email!");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-  
+
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -46,16 +48,24 @@ const ProfileModule = () => {
   const openFilePicker = () => {
     document.getElementById("fileInput").click();
   };
+  const closeModal = () => {
+   SetOpen(false)
+  }
 
   return (
     <div className={style.conteiner}>
-      <div className={style.blok}>
+
+{open && <DeleteAccount onClose={closeModal}/>}
+  <div className={style.blok}>
         <h3>My Profile</h3>
         <div className={style.bordered}>
           <div className={style.imgBlok}>
-           
-           <Avatar className={style.avatar} sx={{ width: 140, height: 140 ,  opacity: isHovered ? 0.2 : 1 }} src={avatar} />
-         
+            <Avatar
+              className={style.avatar}
+              sx={{ width: 140, height: 140, opacity: isHovered ? 0.2 : 1 }}
+              src={avatar}
+            />
+
             <input
               id="fileInput"
               type="file"
@@ -64,8 +74,12 @@ const ProfileModule = () => {
               onChange={handleFileChange}
             />
 
-            <TbCameraPlus className={style.pensel} onClick={openFilePicker}  onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)} />
+            <TbCameraPlus
+              className={style.pensel}
+              onClick={openFilePicker}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
           </div>
 
           <div className={style.cont}>
@@ -107,9 +121,12 @@ const ProfileModule = () => {
         </div>
 
         <div className={style.ButtonBlokDelete}>
-          <button>Delete</button>
+          <button onClick={() => SetOpen(open => !open)}>Delete</button>
         </div>
       </div>
+
+
+      
     </div>
   );
 };
