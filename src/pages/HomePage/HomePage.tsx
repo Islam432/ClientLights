@@ -12,23 +12,33 @@ import logo3 from "../../assets/logo3.svg"
 interface HomePageProps {
   // определите свои пропсы здесь, если есть
 }
+//comment 
 
 const HomePage: React.FC<HomePageProps> = () => {
   const { auth } = useContext(AppContext);
 
   const commonBackgroundStyle = {
-    backgroundImage: `url(${block1})`,
-    backgroundSize: "cover", // You can adjust this based on your needs
+    backgroundImage: `url(${block1})` ,
+    backgroundSize: "cover",
+    
+     // You can adjust this based on your needs
     // Add other common background-related styles if necessary
   };
   const block2Style = {
     backgroundImage: `url(${block2})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize: "cover",
+    
   };
   const block3Style = {
     backgroundImage: `url(${block3})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize: "cover",
   };
   const block4Style = {
     backgroundImage: `url(${block4})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize: "cover",
   };
   return (
     <div className={css.container}>
@@ -65,9 +75,11 @@ const HomePage: React.FC<HomePageProps> = () => {
               <p className={css.list8}>Sound notification</p>
               <p className={css.list9}>LED screen</p>
             </div>
+            <div className={css.btndiv}>
             <button className={css.btn} onClick={auth.logout}>
           Check systems
         </button>
+            </div>
           </div>
          
         </div>
