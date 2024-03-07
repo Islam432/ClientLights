@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { SignUp } from "../../services/auth.service";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEyeSlash } from "react-icons/fa";
-import { IoEyeSharp } from "react-icons/io5";
+import CustomEyeOpenIcon from "../../assets/Opened.svg"
+import CustomEyeClosedIcon from "../../assets/Eye.svg"
 import { AppContext } from "../../App";
 
 export default function LoginPage() {
@@ -63,7 +63,7 @@ export default function LoginPage() {
   return (
     <div className={css.block}>
       <div className={css.card}>
-        <h2 className={css.title}>Welcome!</h2>
+      <h2 className={css.title}>Welcome!</h2>
         <div className={css.child}>
           <div className={css.inp}>
             <input
@@ -74,37 +74,42 @@ export default function LoginPage() {
               name="email"
             />
           </div>
-
-          <div className={css.inp}>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              className={css.input}
-              placeholder="Password"
+        {/* ... (previous code) */}
+        <div className={css.inp}>
+          <input
+            type={passwordVisible ? "text" : "password"}
+            className={css.input}
+            placeholder="Password"
+          />
+          {!passwordVisible ? (
+            <img
+              src={CustomEyeClosedIcon}
+              alt="Eye Closed"
+              className={css.icon}
+              onClick={togglePasswordVisibility}
             />
-            {!passwordVisible ? (
-              <FaEyeSlash
-                className={css.icon}
-                onClick={togglePasswordVisibility}
-              />
-            ) : (
-              <IoEyeSharp
-                className={css.icon}
-                onClick={togglePasswordVisibility}
-              />
-            )}
-          </div>
-          <a href="#" className={css.pass}>
-            Forgot password?
-          </a>
+          ) : (
+            <img
+              src={CustomEyeOpenIcon}
+              alt="Eye Open"
+              className={css.icon}
+              onClick={togglePasswordVisibility}
+            />
+          )}
         </div>
+        <Link to="/forgot" className={css.pass}>
+            Forgot password?
+          </Link>
+          </div>
        
-        <button className={css.btn} onClick={onSubmit}>
-          Log in
-        </button>
-        <Link to="/signap" className={css.link}>
-          CREATE ACCOUNT
-        </Link>
-        {error && <div className={css.error}>{error}</div>}
+       <button className={css.btn} onClick={onSubmit}>
+         Log in
+       </button>
+       <Link to="/signap" className={css.link}>
+         CREATE ACCOUNT
+       </Link>
+       {error && <div className={css.error}>{error}</div>}
+        {/* ... (remaining code) */}
       </div>
     </div>
   );

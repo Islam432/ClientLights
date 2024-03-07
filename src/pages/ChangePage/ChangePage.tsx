@@ -44,14 +44,17 @@ export default function ChangePage() {
   return (
     <div className={css.container}>
       <div className={css.block1}>
-      <h2>Change Password</h2>
-            <p>Password must contain:</p>
+      
+           {/* <h2 className={css.title}>Change Password</h2> */}
             <div className={css.listblock}>
+            <h2 className={css.title}>Change Password</h2>
             <div className={css.list}>
-                <img src={yes} alt="icon" />
+            <p className={css.text}>Password must contain:</p>
+                <img src={yes} alt="icon" className={css.img}/>
                 <span>At least 8 characters</span>
             </div>
             <div className={css.list}>
+              
                 <img src={yes} alt="icon" />
                 <span>At least 1 uppercase letter</span>
             </div>

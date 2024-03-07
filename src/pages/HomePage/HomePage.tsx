@@ -69,7 +69,7 @@ const HomePage: React.FC<HomePageProps> = () => {
               <p className={css.list2}>Strobe light</p>
               <p className={css.list3}>Gobo projector</p>
               <p className={css.list4}>Road sign</p>
-              <p className={css.list5}>Solar planet</p>
+              <p className={css.list5}>Solar panel</p>
               <p className={css.list6}>MPPT</p>
               <p className={css.list7}>Battery</p>
               <p className={css.list8}>Sound notification</p>

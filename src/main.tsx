@@ -19,6 +19,8 @@ import SystemPage from "./pages/SystemPage/SystemPage.tsx";
 import SystemModules from "./modules/SystemModules/SystemModules.tsx";
 import Layout from "./components/Layout/Layout.tsx";
 import ChangePage from "./pages/ChangePage/ChangePage.tsx";
+import ForgotPage from "./pages/ForgotPage/ForgotPage.tsx";
+import LinkPage from "./pages/LinkPage/LinkPage.tsx";
 
 
 
@@ -51,6 +53,7 @@ const router = createBrowserRouter([
             path: "change",
             element: <ChangePage />,   
           },
+          
           {
             path: "systems",
             element: <SystemPage />,
@@ -74,6 +77,13 @@ const router = createBrowserRouter([
         path:"signap",
         element: <AufPage />  
       }, 
+      {
+        path: "forgot",
+        element: <ForgotPage />,   
+      },{
+        path: "link",
+        element: <LinkPage />,   
+      },
     ],
   },
 
