@@ -72,6 +72,9 @@ justify-content: center;
 .btn:hover{
     background-color: #61892F;
 }
+.pass:hover{
+    color: #61892F;
+}
 .icon{
     position: absolute;
     right: 70px;
