@@ -14,6 +14,7 @@ import MapPage from "./pages/MapPage/MapPage.tsx";
 import Profile from "./pages/ProfilePage/ProfilePage.tsx";
 import SystemPage from "./pages/SystemPage/SystemPage.tsx";
 import SystemModules from "./modules/SystemModules/SystemModules.tsx";
+import Layout from "./components/Layout/Layout.tsx";
 
 
 const router = createBrowserRouter([

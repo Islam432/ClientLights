@@ -10,7 +10,7 @@
     height: 100vh;
     margin: 0 auto;
   
-    border: 0.1px solid #f1eff0;
+    border: 0.1px solid transparent;
   }
   .blok h3 {
     /* border: 0.1px solid red; */
