@@ -21,6 +21,8 @@ import Layout from "./components/Layout/Layout.tsx";
 import ChangePage from "./pages/ChangePage/ChangePage.tsx";
 import ForgotPage from "./pages/ForgotPage/ForgotPage.tsx";
 import LinkPage from "./pages/LinkPage/LinkPage.tsx";
+import DynamicsRoute from "./pages/DynamicsRoute/DynamicsRoute.tsx";
+
 
 
 
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
             path: "profile",
             element: <Profile />,   
           },{
-            path: "change",
+            path: "/profile/change",
             element: <ChangePage />,   
           },
           
@@ -63,7 +65,8 @@ const router = createBrowserRouter([
               element: <SystemModules />,
             },
             { path: ":id",
-            element: <SystemPage/>
+            element: <DynamicsRoute
+            />
           }
           ]
           },

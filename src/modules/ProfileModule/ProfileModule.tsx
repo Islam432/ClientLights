@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { GiPencil } from "react-icons/gi";
 import { AppContext } from "../../App";
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-
+import { TbCameraPlus } from "react-icons/tb";
+import DeleteAccount from "../../components/CardDelet/CardDelete";
+import { Link } from "react-router-dom";
 const ProfileModule = () => {
   const data = {
     name: "islam",
@@ -20,21 +21,23 @@ const ProfileModule = () => {
     name: "",
     email: "",
   });
+  const [isHovered, setIsHovered] = useState(false);
+  const [open, SetOpen] = useState(false);
+
   const [avatar, setAvatar] = useState(
     "../../../public/mainComponentImage/girls.png"
   );
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-      change.name && change.email && change.email.includes("@")
-    
+    e.preventDefault();
+    change.name && change.email && change.email.includes("@")
       ? sendFormData()
       : console.log("  введите  email!");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-  
+
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
@@ -46,14 +49,23 @@ const ProfileModule = () => {
   const openFilePicker = () => {
     document.getElementById("fileInput").click();
   };
+  const closeModal = () => {
+   SetOpen(false)
+  }
 
   return (
     <div className={style.conteiner}>
-      <div className={style.blok}>
+
+{open && <DeleteAccount onClose={closeModal}/>}
+  <div className={style.blok}>
         <h3>My Profile</h3>
         <div className={style.bordered}>
           <div className={style.imgBlok}>
-            <Avatar sx={{ width: 140, height: 140 }} src={avatar} />
+            <Avatar
+              className={style.avatar}
+              sx={{ width: 140, height: 140, opacity: isHovered ? 0.2 : 1 }}
+              src={avatar}
+            />
 
             <input
               id="fileInput"
@@ -63,7 +75,12 @@ const ProfileModule = () => {
               onChange={handleFileChange}
             />
 
-            <GiPencil className={style.pensel} onClick={openFilePicker} />
+            <TbCameraPlus
+              className={style.pensel}
+              onClick={openFilePicker}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
           </div>
 
           <div className={style.cont}>
@@ -99,15 +116,20 @@ const ProfileModule = () => {
         </div>
 
         <div className={style.ButtonBlok}>
-          <Link to="/change"><button>Change password</button></Link>
+          <Link to="change">
+          <button>Change password</button>
+          </Link>
           <div></div>
           <button onClick={auth.logout}>Log out</button>
         </div>
 
         <div className={style.ButtonBlokDelete}>
-          <button>Delete</button>
+          <button onClick={() => SetOpen(open => !open)}>Delete</button>
         </div>
       </div>
+
+
+      
     </div>
   );
 };

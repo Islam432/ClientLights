@@ -1,32 +1,34 @@
-import React from 'react'
 import style from './SystemModules.module.css'
 import CardSystems from '../../components/CardSystems/CardSystems'
+
+
+export const data = {
+    cardOne: {
+        id:1,
+        title: "ID: 01A-B",
+        location:"Адрес: ул. Ахунбаева/ул. Безымянная"
+    },
+    cardTwo:{
+        id:2,
+        title: "ID: 02A-B",
+        location:"Адрес: ул. Ахунбаева/ул. Безымянная"
+    },
+    cardTree:{
+        id:3,
+        title: "ID: 01T",
+        location:"Адрес: ул. Тыналиева 1/2"
+    },
+    cardFour:{
+        id:4,
+        title: "ID: 02T",
+        location:"Адрес: ул. Тыналиева 1/2"
+    },
+
+}
+    
+
 const SystemModules = () => {
-
-    const data = {
-        cardOne: {
-            id:1,
-            title: "ID: 01A-B",
-            location:"Адрес: ул. Ахунбаева/ул. Безымянная"
-        },
-        cardTwo:{
-            id:1,
-            title: "ID: 02A-B",
-            location:"Адрес: ул. Ахунбаева/ул. Безымянная"
-        },
-        cardTree:{
-            id:1,
-            title: "ID: 01T",
-            location:"Адрес: ул. Тыналиева 1/2"
-        },
-        cardFour:{
-            id:1,
-            title: "ID: 02T",
-            location:"Адрес: ул. Тыналиева 1/2"
-        },
-
-    }
-        
+  
 
     
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from "./CardSystems.module.css"
+import { NavLink } from 'react-router-dom';
 
 
 interface typedatacard {
@@ -8,13 +9,14 @@ interface typedatacard {
     location: string;
   }
   
-const CardSystems : React.FC<{ data: typedatacard }> = ({ data }) => {
+  const CardSystems: React.FC<{ data: typedatacard }> = React.memo(({ data }) => {
    
   return (
+    <NavLink to={`/systems/${data.id}`}>
     <div className={style.conteiner}>
         <div className={style.iconblok}>
        <span>
-        <img src="../../../public/mainComponentsImage/systemsIcon.png" alt="" />
+        <img src="../../../public/mainComponentImage/systemsIcon.png" alt="icon" />
        </span>
         </div>
         <div className={style.textblok}>
@@ -24,7 +26,8 @@ const CardSystems : React.FC<{ data: typedatacard }> = ({ data }) => {
          </p>
         </div>
     </div>
-  )
-}
+    </NavLink>
+  );
+});
 
 export default CardSystems

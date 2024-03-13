@@ -13,7 +13,7 @@
     flex-direction: column;
 
     /* justify-content: center; */
-    box-shadow: 0 3px 5px rgb(200, 196, 196);
+    box-shadow: 0 5px 15px rgba(200, 196, 196, 0.2);
      width:450px;
     height:550px ;
     border-radius: 30px;

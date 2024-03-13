@@ -5,10 +5,15 @@ export default function LinkPage() {
   return (
     <div className={css.container}>
         <div className={css.block}>
+        <img className={css.img} src={link} alt="link" />
             <div className={css.forgot}>
-            <img className={css.img} src={link} alt="link" />
+            
             <p className={css.text}>
-            We sent you the link.  Please check your email.
+            We sent you the link. 
+            
+          <p className={css.text}>
+           Please check your email.
+          </p>
             </p>
             <Link className={css.login} to="/signin">Log in</Link>
             </div>

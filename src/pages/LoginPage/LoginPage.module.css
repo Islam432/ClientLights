@@ -74,7 +74,12 @@ justify-content: center;
 }
 .icon{
     position: absolute;
-    right: 60px;
+    right: 67px;
+    bottom: 10px;
+}
+.icon1{
+    position: absolute;
+    right: 90px;
     bottom: 10px;
 }
 .pass{
