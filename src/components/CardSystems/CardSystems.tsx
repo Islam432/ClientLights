@@ -14,7 +14,7 @@ const CardSystems : React.FC<{ data: typedatacard }> = ({ data }) => {
     <div className={style.conteiner}>
         <div className={style.iconblok}>
        <span>
-        <img src="../../../public/mainComponentsImage/systemsIcon.png" alt="" />
+        <img src="../../../public/mainComponentImage/systemsIcon.png" alt="icon" />
        </span>
         </div>
         <div className={style.textblok}>

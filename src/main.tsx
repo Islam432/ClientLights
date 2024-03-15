@@ -8,12 +8,13 @@ import HomePage from "./pages/HomePage/HomePage.tsx";
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import ProtecteRoute from './protectedRoute/protecteRoute';
 
-import { SideBar } from "./components/SideBar/SideBar.tsx";
+// import { SideBar } from "./components/SideBar/SideBar.tsx";
 import {AufPage} from "./pages/SignupPage/SignupPage.tsx";
 import MapPage from "./pages/MapPage/MapPage.tsx";
 import Profile from "./pages/ProfilePage/ProfilePage.tsx";
 import SystemPage from "./pages/SystemPage/SystemPage.tsx";
 import SystemModules from "./modules/SystemModules/SystemModules.tsx";
+import Layout from "./components/Layout/Layout.tsx";
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
       
-          element: <ProtecteRoute children={<SideBar />} />, 
+          element: <ProtecteRoute children={<Layout />} />, 
        
          children: [
           {

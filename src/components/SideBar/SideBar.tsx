@@ -227,7 +227,6 @@ export function SideBar() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, }}>
-        <DrawerHeader />
         <Outlet/>
        
       </Box>

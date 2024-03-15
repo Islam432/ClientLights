@@ -116,7 +116,7 @@ export const AufPage = () => {
           </div>
         </div>
         <button className={css.btn} onClick={handleSubmit}>
-          Create
+          Create account
         </button>
         <Link to="/signin" className={css.link}>
           LOG IN
