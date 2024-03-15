@@ -23,23 +23,29 @@ const HomePage: React.FC<HomePageProps> = () => {
     backgroundSize: "cover",
     
      // You can adjust this based on your needs
+
+    
+     // You can adjust this based on your needs
     // Add other common background-related styles if necessary
   };
   const block2Style = {
     backgroundImage: `url(${block2})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+
     
   };
   const block3Style = {
     backgroundImage: `url(${block3})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+  
   };
   const block4Style = {
     backgroundImage: `url(${block4})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+
   };
   return (
     <div className={css.container}>

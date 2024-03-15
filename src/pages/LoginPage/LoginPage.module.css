@@ -72,6 +72,12 @@ justify-content: center;
 .btn:hover{
     background-color: #61892F;
 }
+<<<<<<< HEAD
+=======
+.pass:hover{
+    color: #61892F;
+}
+>>>>>>> 13a5e51eb571abcc1ac025d59a5f9880c6f43140
 .icon{
     position: absolute;
     right: 67px;

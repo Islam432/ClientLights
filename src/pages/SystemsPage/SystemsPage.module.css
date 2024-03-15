@@ -1,0 +1,21 @@
+.block{
+    height: 1024px;
+    width: 100%;
+    background-color: #222629;
+}
+h2{
+    color: #FDFFFF;
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Merriweather';
+}
+.systems{
+    width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
