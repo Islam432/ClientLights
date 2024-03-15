@@ -1,176 +1,223 @@
 .conteiner {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background: #222629;
-  }
-  .blok {
-    
-    max-width: 100%;
-    height: 100vh;
-    margin: 0 auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #222629;
+}
+.blok {
   
-    border: 0.1px solid #f1eff0;
-  }
-  .blok h3 {
-    /* border: 0.1px solid red; */
-    font-family:Merriweather ;
-    font-weight: 700;
-    font-style: normal;
-    font-size: clamp(18px, 3vw, 27px);
-  
-    margin: 0 auto;
-    text-align: center;
-    color: white;
-    margin-top: 7.25rem;
-  }
-  .blok p {
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: clamp(18px, 3vw, 22px);
-    color: white;
-  }
-  .bloktext {
-    max-width: 18.75rem;
-    display: flex;
-    gap: 1.5rem;
-    text-align: center;
-    align-items: center;
-  }
-  .pen {
-    font-size: 20px;
-    color: #80aa45;
-    display: flex;
-  }
-  .pen:hover {
-    border-radius: 5px;
-    color: #f70000;
-    background: rgb(138, 138, 230);
-  }
-  .datatext {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    display: flex;
-  background: none;
-  border: none;
-    font-size: clamp(17px, 3vw, 21px);
-    color: gray;
-  }
-  .pensel{
-  
-    position: absolute;
-    bottom: 2.3rem;
-    right: 0.5rem;
-    border: 2px solid #b3f85e;
-  width: 
-  40px;
-  
-  height: 40px;
-  padding: 5px;
-  border-radius: 30px;
-  color: #3c993c;
-  background: white;
-  cursor: pointer;
-  box-shadow: inset;
-  font-size: 10px;
-  
-  
-  }
-  .pensel:hover{
-    transition: 0.5s;
-    scale: 1.1;
-    
-    padding: 6px;
-  }
-  
-  .imgBlok {
-    position: relative;
-    display: flex;
-    align-items: center;
-  
-  }
-  .cont {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .bordered {
-    padding-left: 2rem;
-    gap: 2rem;
-    max-width: 40rem;
+  max-width: 100%;
+  height: 100vh;
   margin: 0 auto;
-  
-    height: 30vh;
-  
-    display: flex;
-  }
-  .ButtonBlok{
-    display: flex;
-    max-width: 100%;
-  padding: 10px;
-  justify-content: center;
-  padding-right: 8rem;
+
+  border: 0.1px solid transparent  }
+.blok h3 {
+  /* border: 0.1px solid red; */
+  font-family:Merriweather ;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(18px, 3vw, 27px);
+
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  margin-top: 7.25rem;
+}
+.blok p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: clamp(18px, 3vw, 22px);
+  color: white;
+}
+.bloktext {
+  max-width: 18.75rem;
+  display: flex;
+  gap: 1.5rem;
+  text-align: center;
   align-items: center;
-    margin: 2rem auto;
-    /* border: 0.1px solid red; */
-    gap: 6rem;
-  }
+}
+.datatext:hover {
+  border: 1px solid gray ;
+}
+.datatext:focus::after {
+   padding: 1px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f01800;
+}
+.pen {
+  font-size: 20px;
+  color: #80aa45;
+  display: flex;
+}
+.pen:hover {
+  border-radius: 5px;
+  color: #f70000;
+  background: rgb(138, 138, 230);
+}
+.datatext {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+background: none;
+border: none;
+  font-size: clamp(17px, 3vw, 21px);
+  color: gray;
+}
+.pensel{
+
+height: 100%;
+width: 100%;
+
+opacity: 0;
+  position: absolute;
+  /* bottom: 2.3rem;
+  right: 0.5rem;
+  border: 2px solid #b3f85e;
+width: 
+40px;
+ */
+/* height: 40px;
+padding: 5px;
+border-radius: 30px; */
+color: #2b2a2a;
+background: none;
+cursor: pointer;
+/* box-shadow: inset;
+font-size: 10px; */
+font-size: 10px;
+padding: 100px;
+
+}
+.pensel:hover{
+  transition: 0.2s;
+  scale: 1.1;
+  opacity: 100;
+  padding: 40px;
+  background: white;
+  background: transparent;
+ 
+}
+
+.imgBlok {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
   
-  .ButtonBlok div{
-  border: 1px solid #474B4F;
-  height: 4rem;
+  display: flex;
+  align-items: center;
   
-  }
-  .ButtonBlok button{
-    cursor: pointer;
-  color: #61892f;
-  background: none;
+}
+.imgBlok:hover {
+  transition: 0.4s;
+  background: white; opacity: 0.75;
+  
+}
+.avatar:hover{
+ /* opacity: ; */
+  /* background: white; opacity: 0.75; */
+  background-color: rgba(255, 255, 255, 25.5); /* Красный фон с прозрачностью 0.5 */
+
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+.bordered {
+  padding-left: 2rem;
+  gap: 2rem;
+  max-width: 40rem;
+margin: 0 auto;
+
+  height: 30vh;
+
+  display: flex;
+  align-items: center;
+}
+.ButtonBlok{
+  display: flex;
+  max-width: 100%;
+padding: 10px;
+justify-content: center;
+padding-right: 8rem;
+align-items: center;
+  margin: 2rem auto;
+  /* border: 0.1px solid red; */
+  gap: 6rem;
+}
+
+.ButtonBlok div{
+border: 1px solid #474B4F;
+height: 4rem;
+
+}
+.ButtonBlok button{
+  cursor: pointer;
+color: #61892f;
+background: none;
+border: none;
+font-size: clamp(15px, 3vw, 25px);
+font-family: lato;
+padding: 1rem;
+font-weight: 400;
+letter-spacing: .1rem;
+
+}
+.ButtonBlok button:hover{
+  color: #95d14b;
+  transition: 0.7s;
+}
+
+.ButtonBlokDelete{
+  display: flex;
+  padding: 10px;
+ 
+  max-width: 100%;
+  margin: 2rem auto;
+  justify-content: center;
+}
+.ButtonBlokDelete button{
   border: none;
-  font-size: clamp(15px, 3vw, 25px);
+  background: none;
+  padding: 0.5rem;
   font-family: lato;
-  padding: 1rem;
   font-weight: 400;
+  color: gray;
   letter-spacing: .1rem;
-  
-  }
-  
-  .ButtonBlokDelete{
-    display: flex;
-    padding: 10px;
-   
-    max-width: 100%;
-    margin: 2rem auto;
-    justify-content: center;
-  }
-  .ButtonBlokDelete button{
-    border: none;
-    background: none;
-    padding: 0.5rem;
-    font-family: lato;
-    font-weight: 400;
-    color: gray;
-    letter-spacing: .1rem;
-    cursor: pointer;
   font-size: clamp(15px, 3vw, 18px);
-  }
-  
-  @media( max-width: 600px){
-    .ButtonBlok button{
-      border: 1px solid red;
-      flex-wrap: wrap;
-    }
-    .ButtonBlok{
-      gap: 1rem;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-    .ButtonBlok div{
-  display: none;
-    }
-  }
-  
-  @media( max-width: 550px){
-  .bordered{
+  cursor: pointer;
+
+}
+.ButtonBlokDelete button:hover{
+ scale: 1.1;
+ transition: 0.5s;
+  color: #FDFFFF;
+}
+
+@media( max-width: 600px){
+  .ButtonBlok button{
+    border: 1px solid red;
     flex-wrap: wrap;
   }
+  .ButtonBlok{
+    gap: 1rem;
+    padding: 0;
+    flex-wrap: wrap;
   }
+  .ButtonBlok div{
+display: none;
+  }
+}
+
+@media( max-width: 550px){
+.bordered{
+  flex-wrap: wrap;
+}
+}

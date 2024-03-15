@@ -40,15 +40,15 @@
     outline: none;
 
 }
-a{
+.link{
     font-family: 'Lato', sans-serif;
     text-decoration: none;
     margin: 20px auto ;
-border-bottom: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     color: #61892F;
     transition: 0.5s ease;
 }
- a:hover{
+ .link:hover{
     border-bottom: 1px solid #61892F;
  }
 
@@ -72,16 +72,30 @@ justify-content: center;
 .btn:hover{
     background-color: #61892F;
 }
+<<<<<<< HEAD
+=======
 .pass:hover{
     color: #61892F;
 }
+>>>>>>> 13a5e51eb571abcc1ac025d59a5f9880c6f43140
 .icon{
     position: absolute;
-    right: 70px;
-    bottom: 20px;
+    right: 67px;
+    bottom: 10px;
+}
+.icon1{
+    position: absolute;
+    right: 90px;
+    bottom: 10px;
 }
 .pass{
+    text-decoration: none;
+    padding-top: 30px;
     color: gray;
+}
+.pass:hover{
+    color: #61892F;
+    text-decoration: underline;
 }
 .error{
     display: flex;

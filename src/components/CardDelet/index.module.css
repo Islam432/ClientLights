@@ -1,0 +1,77 @@
+.container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный задний фон */
+    z-index: 9999;
+}
+
+.content {
+    background-color: white;
+    padding: 50px 0px;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.trash {
+    height: 25%;
+    width: 25%;
+    color: #86C232;
+}
+.text {
+    margin: 10% 25%;
+    text-align: center;
+    max-width: 100%;
+    width: 50%;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.btnNo {
+    transition: 0.5s ease-in-out;
+    padding: 3% 10%;
+    border-radius: 0 15px 15px 0;
+    border: 0;
+    background-color: #86C232;
+    color: #fff;
+    font-size: large;
+}
+
+.btnYes {
+    transition: 0.5s ease-in-out;
+    padding: 3% 10%;
+    border-radius: 15px 0 0 15px;
+    border: 0;
+    background-color: #000;
+    color: #fff;
+    font-size: large;
+}
+
+.btnYes:hover + .btnNo{
+    background-color: #000;
+}
+
+.btnYes:hover {
+    background-color: #86C232;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+.close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

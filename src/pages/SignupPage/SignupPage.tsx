@@ -1,8 +1,8 @@
 import css from "./SignupPage.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaEyeSlash } from "react-icons/fa";
-import { IoEyeSharp } from "react-icons/io5";
+import EyeSlashIcon from "../../assets/Eye.svg";
+import EyeSharpIcon from "../../assets/Opened.svg";
 
 export const AufPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -94,9 +94,9 @@ export const AufPage = () => {
               onChange={handlePasswordChange}
             />
             {!passwordVisible ? (
-              <FaEyeSlash className={css.icon} onClick={togglePasswordVisibility} />
+              <img src={EyeSlashIcon} className={css.icon} alt="Eye Slash" onClick={togglePasswordVisibility} />
             ) : (
-              <IoEyeSharp className={css.icon} onClick={togglePasswordVisibility} />
+              <img src={EyeSharpIcon} className={css.icon} alt="Eye Sharp" onClick={togglePasswordVisibility} />
             )}
           </div>
 
@@ -109,9 +109,9 @@ export const AufPage = () => {
               onChange={handleConfirmPasswordChange}
             />
             {!passwordVisible1 ? (
-              <FaEyeSlash className={css.icon} onClick={togglePasswordVisibility1} />
+              <img src={EyeSlashIcon} className={css.icon} alt="Eye Slash" onClick={togglePasswordVisibility1} />
             ) : (
-              <IoEyeSharp className={css.icon} onClick={togglePasswordVisibility1} />
+              <img src={EyeSharpIcon} className={css.icon} alt="Eye Sharp" onClick={togglePasswordVisibility1} />
             )}
           </div>
         </div>

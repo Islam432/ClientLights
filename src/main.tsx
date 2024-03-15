@@ -1,5 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import * as ReactDOM from 'react-dom';
+
+// import ReactDOM from "react-dom/client";
+// import ReactDOM from "react/jsx-runtime";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider,} from "react-router-dom";
@@ -15,6 +18,12 @@ import Profile from "./pages/ProfilePage/ProfilePage.tsx";
 import SystemPage from "./pages/SystemPage/SystemPage.tsx";
 import SystemModules from "./modules/SystemModules/SystemModules.tsx";
 import Layout from "./components/Layout/Layout.tsx";
+import ChangePage from "./pages/ChangePage/ChangePage.tsx";
+import ForgotPage from "./pages/ForgotPage/ForgotPage.tsx";
+import LinkPage from "./pages/LinkPage/LinkPage.tsx";
+import DynamicsRoute from "./pages/DynamicsRoute/DynamicsRoute.tsx";
+
+
 
 
 const router = createBrowserRouter([
@@ -42,7 +51,11 @@ const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,   
+          },{
+            path: "/profile/change",
+            element: <ChangePage />,   
           },
+          
           {
             path: "systems",
             element: <SystemPage />,
@@ -52,7 +65,8 @@ const router = createBrowserRouter([
               element: <SystemModules />,
             },
             { path: ":id",
-            element: <SystemPage/>
+            element: <DynamicsRoute
+            />
           }
           ]
           },
@@ -66,6 +80,13 @@ const router = createBrowserRouter([
         path:"signap",
         element: <AufPage />  
       }, 
+      {
+        path: "forgot",
+        element: <ForgotPage />,   
+      },{
+        path: "link",
+        element: <LinkPage />,   
+      },
     ],
   },
 
@@ -74,8 +95,10 @@ const router = createBrowserRouter([
 
 
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root") as HTMLElement
 );
+

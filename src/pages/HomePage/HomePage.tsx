@@ -9,6 +9,7 @@ import block4 from "../../assets/block4.jpg"
 import logo1 from "../../assets/logo1.svg"
 import logo2 from "../../assets/logo2.svg"
 import logo3 from "../../assets/logo3.svg"
+import { Link } from "react-router-dom";
 interface HomePageProps {
   // определите свои пропсы здесь, если есть
 }
@@ -22,23 +23,29 @@ const HomePage: React.FC<HomePageProps> = () => {
     backgroundSize: "cover",
     
      // You can adjust this based on your needs
+
+    
+     // You can adjust this based on your needs
     // Add other common background-related styles if necessary
   };
   const block2Style = {
     backgroundImage: `url(${block2})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+
     
   };
   const block3Style = {
     backgroundImage: `url(${block3})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+  
   };
   const block4Style = {
     backgroundImage: `url(${block4})`,
     backgroundRepeat:"no-repeat",
     backgroundSize: "cover",
+
   };
   return (
     <div className={css.container}>
@@ -69,16 +76,17 @@ const HomePage: React.FC<HomePageProps> = () => {
               <p className={css.list2}>Strobe light</p>
               <p className={css.list3}>Gobo projector</p>
               <p className={css.list4}>Road sign</p>
-              <p className={css.list5}>Solar planet</p>
+              <p className={css.list5}>Solar panel</p>
               <p className={css.list6}>MPPT</p>
               <p className={css.list7}>Battery</p>
               <p className={css.list8}>Sound notification</p>
               <p className={css.list9}>LED screen</p>
             </div>
             <div className={css.btndiv}>
-            <button className={css.btn} onClick={auth.logout}>
+            <Link to="systems">
+            <button className={css.btn} >
           Check systems
-        </button>
+        </button></Link>
             </div>
           </div>
          
