@@ -9,6 +9,7 @@ import block4 from "../../assets/block4.jpg"
 import logo1 from "../../assets/logo1.svg"
 import logo2 from "../../assets/logo2.svg"
 import logo3 from "../../assets/logo3.svg"
+import { Link } from "react-router-dom";
 interface HomePageProps {
   // определите свои пропсы здесь, если есть
 }
@@ -76,9 +77,10 @@ const HomePage: React.FC<HomePageProps> = () => {
               <p className={css.list9}>LED screen</p>
             </div>
             <div className={css.btndiv}>
-            <button className={css.btn} onClick={auth.logout}>
+            <Link to="systems">
+            <button className={css.btn} >
           Check systems
-        </button>
+        </button></Link>
             </div>
           </div>
          
