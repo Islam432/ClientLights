@@ -69,6 +69,19 @@ const router = createBrowserRouter([
             />
           }
           ]
+          },{
+            path: "/homepage/systems",
+            element: <SystemPage />,
+          children:[
+            {
+              index:true,
+              element: <SystemModules />,
+            },
+            { path: ":id",
+            element: <DynamicsRoute
+            />
+          }
+          ]
           },
         ]
       },
