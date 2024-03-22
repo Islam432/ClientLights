@@ -18,7 +18,7 @@ export const AufPage = () => {
   };
 
   const validatePassword = () => {
-    const passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
     return passwordRegex.test(password);
   };
 
@@ -48,7 +48,7 @@ export const AufPage = () => {
       return;
     }
 
-    if (password.length < 8 || !validatePassword()) {
+    if (!validatePassword()) {
       setError(
         "Invalid password format. Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, at least one digit, and at least one special character."
       );
@@ -123,7 +123,7 @@ export const AufPage = () => {
         </Link>
         {error && (
           <div className={css.error}>
-            {error}
+           <p className={css.errortext}> {error}</p>
           </div>
         )}
       </div>

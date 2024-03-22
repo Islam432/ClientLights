@@ -3,6 +3,7 @@ import styles from './About.module.css'
 export const AboutPage = () => {
   return (
     <div className={styles.about}>
+
          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
           enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus

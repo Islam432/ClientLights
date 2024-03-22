@@ -20,8 +20,11 @@
 }
 .title{
     text-align: center;
-    margin: 20px;
-    padding-top: 20px;
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Merriweather";
+    letter-spacing: 1.5px;
 }
 .child{
     display: flex;
@@ -69,6 +72,8 @@ justify-content: center;
     margin: 60px auto 0 auto;
     color: #fff;
     font-size: large;
+    border: none;
+
 }
 .btn:hover{
     background-color: #61892F;
@@ -79,18 +84,13 @@ justify-content: center;
     bottom: 20px;
 }
 .error{
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
-    margin: 20px auto;
-    background-color: rgb(238, 229, 229);
-    color: #61892F;
-    text-align: center;
-    width: 50%;
-    height:auto;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 0 auto;
+    
+}
+.errortext{
+    font-family: 'Lato', sans-serif;  
+    color: gray;
+    text-align: center; 
 }
 .btn:hover{
     background-color: #61892F;

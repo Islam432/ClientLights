@@ -7,6 +7,7 @@ height: 100px;
     align-items: center;
     justify-content: center;
     transition: box-shadow 0.5s;
+    text-decoration: none;
 }
 .iconblok{
     display: flex;
@@ -22,20 +23,24 @@ gap: 0.7rem;
 
 }
 .textblok h2{
-    font-family: Lato;
+    font-family: 'Lato',sans-serif;
     font-weight: 400;
     color: #FDFFFF;
     font-size:clamp(20px, 3vw, 25px);
 }
 .textblok p{
-    font-family: Lato;
+    font-family: 'Lato',sans-serif;
     font-weight: 400;
     color: #A3A5A5;
     font-size:clamp(14px, 3vw, 16px);
+    text-decoration: none;
 }
 .conteiner:hover{
     border: 1px solid #FDFFFF ;
     transition: 0.5s;
     box-shadow: 0px 0px 5px 0px #FDFFFF;
     cursor: pointer;
+}
+.navlink{
+    text-decoration: none;
 }

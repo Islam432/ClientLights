@@ -9,7 +9,7 @@
 }.block{
     width: 661px;
     height: 570px;
-    box-shadow:3px 3px 5px 6px rgba(253, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(200, 196, 196, 0.2);
     background-color:rgba(34, 38, 41, 1);
     border-radius: 30px;
     display: flex;
@@ -26,40 +26,50 @@
     height: 390px;
 }
 .title{
-    font-family: 'Merriweather',serif;
-    padding-bottom: 40px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: "Merriweather";
+    padding-bottom:15px;
+    letter-spacing: 1.2px;
 }
 .text{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     color: rgba(107, 110, 112, 1);
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+    width: 350px;
+    font-family: 'Lato', sans-serif;
+    line-height: 25px;
+    letter-spacing: 1px;
     /* width: 358px; */
     /* text-align: center; */
 
 }
 .inp{
-    width: 500px;
+    width: 400px;
     height: 42px;
     background: none;
     border: none;
-    border-bottom: #FDFFFF 1px solid;
-    font-size: 25px;
+    border-bottom: #FDFFFF 2px solid;
+    font-size: 20px;
     color: #FDFFFF;
-    margin: 30px auto;
+    /* margin: 30px auto; */
+    margin: 0 auto;
 }.inp:focus {
     outline: none;
   }
   .btn{
     /* margin: 0 auto; */
-    margin-top: 30px;
+    margin-top: 65px;
     width: 273px;
     height: 70px;
-    font-size: 25px;
-    border-radius: 25px;
+    font-size: 22px;
+    border: none;
+    border-radius: 15px;
     background-color: #86C232;
     color: #FDFFFF;
-
 }
 .btn:hover{
     background-color: rgba(97, 137, 47, 1);

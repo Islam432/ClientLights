@@ -55,22 +55,21 @@ export default function ChangePage() {
             </div>
             <div className={css.list}>
               
-                <img src={yes} alt="icon" />
-                <span>At least 1 uppercase letter</span>
+                <img src={yes} alt="icon" className={css.img}/>
+                <span> At least 1 uppercase letter</span>
             </div>
             <div className={css.list}>
-                <img src={yes} alt="icon" />
+                <img src={yes} alt="icon"className={css.img} />
                 <span>At least 1 lowercase letter</span>
             </div>
             <div className={css.list}>
-                <img src={yes} alt="icon" />
+                <img src={yes} alt="icon"className={css.img} />
                 <span>At least 1 special character (@#!$...)</span>
             </div><div className={css.list}>
-                <img src={yes} alt="icon" />
+                <img src={yes} alt="icon"className={css.img} />
                 <span>At least 1 number</span>
             </div>
             </div>
-        {/* ... your existing code ... */}
       </div>
       <div className={css.block2}>
         <div className={css.inpBlock}>

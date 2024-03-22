@@ -1,5 +1,6 @@
 .conteiner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
   
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@
     display: flex;
     justify-content: space-evenly;
     height: 100vh;
+    
     /* border: 1px solid red; */
     align-items: center;
     flex: 1;
@@ -42,6 +44,8 @@
     gap: 6rem;
     justify-content: center;
     height: 100vh;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
   }
   .dataBlok {
     display: flex;
@@ -55,13 +59,13 @@
   .dataBlok h3 {
     text-align: center;
     color: #61892f;
-    font-family: loto;
+    font-family: 'Lato',sans-serif;
     font-weight: 600;
     font-size: clamp(19px, 3vw, 22px);
   }
   .dataBlok p {
     color: #fdffff;
-    font-family: loto;
+    font-family: 'Lato',sans-serif;
     font-weight: 400;
     letter-spacing: 1.5px;
     font-size: clamp(16px, 3vw, 18px);

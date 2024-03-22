@@ -25,7 +25,7 @@ import { PiCpu } from "react-icons/pi";
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { LuSettings } from "react-icons/lu";
 import { RxAvatar } from "react-icons/rx";
-import Footer from "../Footer/Footer"
+import Footer from '../Footer/Footer';
 
 const drawerWidth = 240;
 
@@ -105,14 +105,14 @@ const linksTwo = [
   },
   {
     path: "/profile",
-    title: 'profile',
+    title: 'Profile',
     icon: <RxAvatar />
   },
   {
     
     
     path: "/setting",
-    title: 'setting',
+    title: 'Setting',
     icon: <LuSettings />
   }
 
@@ -134,7 +134,7 @@ const links = [
 },
 {
   path: "/systems",
-  title: 'systems',
+  title: 'Systems',
   icon: <PiCpu />
 }
 ]
@@ -154,79 +154,117 @@ export function SideBar() {
   return (
     <Box sx={{ display: 'flex', margin:'0px', padding:'0px'}}>
       <CssBaseline />
-    
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+      <Drawer variant="permanent" open={open} sx={{border:'none'}}>
+        <DrawerHeader  sx={{border:'none',marginBottom:'0px',paddingBottom:'0px'}} >
+        <img style={{paddingRight:'30px',}} src="/public/logo.jpg" alt="" />
+
       
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton style={{color:'#86C232',}}  onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
           <IconButton
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="end"
+            
             sx={{
               marginRight: 0.4,
               ...(open && { display: 'none' }),
             }}
           >
-            <MenuIcon style={{color:'#506f2d'}} />
+            <MenuIcon style={{color:'#86C232',}} />
           </IconButton>
-        </DrawerHeader>
+        </DrawerHeader >
    
-        <List>
+        <List sx={{marginTop:'0px', paddingBottom:'0px'}}>
           {links.map((data, index) => (
-            <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-              selected={data.path ===location.pathname.slice(0, data.path.length)}
-              component={NavLink}
-              to={data.path}
-                sx={{
-                  minHeight: 68,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    fontSize:'26px',
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {data.icon}
-                </ListItemIcon>
-                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
+            <ListItem key={index} disablePadding sx={{ display: 'block',  }}>
+             <ListItemButton
+  selected={data.path === location.pathname.slice(0, data.path.length)}
+  component={NavLink}
+  to={data.path}
+  sx={{
+   
+    minHeight: 68,
+    justifyContent: open ? 'initial' : 'center',
+    px: 2.5,
+    
+    "&.Mui-selected": {
+      backgroundColor: "transparent",
+
+    },
+    "&.active": {
+      backgroundColor: "#222629",
+    },
+    "&.active .MuiListItemIcon-root, &.active .MuiTypography-root": {
+      color: "#86C232",
+    },
+    "&:hover": {
+      backgroundColor: "transparent", 
+      border:'none'
+     
+    },
+    
+  }}
+>
+  <ListItemIcon
+    sx={{
+      
+      fontSize:'26px',
+      minWidth: 0,
+      mr: open ? 3 : 'auto',
+      justifyContent: 'center',
+    }}
+  >
+    {data.icon}
+  </ListItemIcon>
+  <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0,  }} />
+</ListItemButton>
+
             </ListItem>
           ))}
        
           {linksTwo.map((data, index) => (
             <ListItem key={index} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
-               selected={data.path ===location.pathname.slice(0, data.path.length)}
-               component={NavLink}
-               to={data.path}
-                sx={{
-                  minHeight: 68,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    fontSize:'26px',
+  selected={data.path === location.pathname.slice(0, data.path.length)}
+  component={NavLink}
+  to={data.path}
+  sx={{
+    borderRight:'none',
+    
+    minHeight: 68,
+    justifyContent: open ? 'initial' : 'center',
+    px: 2.5,
+     "&.Mui-selected": {
+      backgroundColor: "transparent",
 
-                    minWidth: 0,
-                    mr: open ? 2 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {data.icon}
-                </ListItemIcon>
-                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
+    },
+    "&.active": {
+      backgroundColor: "#222629", // Устанавливаем цвет фона для активной кнопки
+    },
+    "&.active .MuiListItemIcon-root, &.active .MuiTypography-root": {
+      color: "#86C232",
+    },
+    "&:hover": {
+      border:'none'
+     
+    },
+  }}
+>
+  <ListItemIcon
+    sx={{
+      fontSize:'26px',
+      minWidth: 0,
+      mr: open ? 3 : 'auto',
+      justifyContent: 'center',
+    }}
+  >
+    {data.icon}
+  </ListItemIcon>
+  <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} />
+</ListItemButton>
+
             </ListItem>
           ))}
         </List>

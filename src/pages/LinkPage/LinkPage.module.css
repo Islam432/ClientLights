@@ -9,7 +9,7 @@
 }.block{
     width: 661px;
     height: 570px;
-    box-shadow:3px 3px 5px 6px rgba(253, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(200, 196, 196, 0.2);
     background-color:rgba(34, 38, 41, 1);
     border-radius: 30px;
     display: flex;
@@ -33,9 +33,9 @@
 
 .text{
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500;
     color: rgba(253, 255, 255, 1);
-    
+    letter-spacing: 1px;
     /* width: 358px; */
     text-align: center;
 

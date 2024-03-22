@@ -7,32 +7,33 @@ import { useState } from "react";
 import { TbCameraPlus } from "react-icons/tb";
 import DeleteAccount from "../../components/CardDelet/CardDelete";
 import { Link } from "react-router-dom";
+
 const ProfileModule = () => {
   const data = {
     name: "islam",
     email: "islam2004@gmail.com",
   };
+
   interface ChangeState {
     name: string;
     email: string;
   }
+
   const { auth } = useContext(AppContext);
   const [change, setChange] = useState<ChangeState>({
-    name: "",
-    email: "",
+    name: "example",
+    email: "example@gmail.com",
   });
   const [isHovered, setIsHovered] = useState(false);
   const [open, SetOpen] = useState(false);
-
-  const [avatar, setAvatar] = useState(
-    "../../../public/mainComponentImage/girls.png"
-  );
+  const [avatar, setAvatar] = useState("../../../public/mainComponentImage/girls.png");
+  const [isInputFocused, setIsInputFocused] = useState(false); // Состояние фокуса на инпуте
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     change.name && change.email && change.email.includes("@")
       ? sendFormData()
-      : console.log("  введите  email!");
+      : console.log("Введите email!");
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,18 +47,19 @@ const ProfileModule = () => {
       reader.readAsDataURL(file);
     }
   };
+
   const openFilePicker = () => {
     document.getElementById("fileInput").click();
   };
+
   const closeModal = () => {
-   SetOpen(false)
-  }
+    SetOpen(false);
+  };
 
   return (
     <div className={style.conteiner}>
-
-{open && <DeleteAccount onClose={closeModal}/>}
-  <div className={style.blok}>
+      {open && <DeleteAccount onClose={closeModal} />}
+      <div className={style.blok}>
         <h3>My Profile</h3>
         <div className={style.bordered}>
           <div className={style.imgBlok}>
@@ -87,37 +89,41 @@ const ProfileModule = () => {
             <div className={style.bloktext}>
               <p>Username:</p>
               <input
-                onChange={(event) =>
-                  setChange({ ...change, name: event.target.value })
-                }
+                onFocus={() => setIsInputFocused(true)} // Установка состояния при фокусе
+                onBlur={() => setIsInputFocused(false)} // Установка состояния при потере фокуса
+                onChange={(event) => setChange({ ...change, name: event.target.value })}
                 className={style.datatext}
                 type="text"
                 placeholder={change.name}
               />
-              <div>
-                <GiPencil onSubmit={(e) => onSubmit} className={style.pen} />
-              </div>
+              {!isInputFocused && (
+                <div>
+                  <GiPencil onSubmit={(e) => onSubmit} className={style.pen} />
+                </div>
+              )}
             </div>
             <div className={style.bloktext}>
               <p>Email:</p>
               <input
-                onChange={(event) =>
-                  setChange({ ...change, email: event.target.value })
-                }
+                onFocus={() => setIsInputFocused(true)} // Установка состояния при фокусе
+                onBlur={() => setIsInputFocused(false)} // Установка состояния при потере фокуса
+                onChange={(event) => setChange({ ...change, email: event.target.value })}
                 className={style.datatext}
                 type="text"
                 placeholder={change.email}
               />
-              <div>
-                <GiPencil onClick={(e) => onSubmit} className={style.pen} />
-              </div>
+              {!isInputFocused && (
+                <div>
+                  <GiPencil onClick={(e) => onSubmit} className={style.pen} />
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         <div className={style.ButtonBlok}>
           <Link to="change">
-          <button>Change password</button>
+            <button>Change password</button>
           </Link>
           <div></div>
           <button onClick={auth.logout}>Log out</button>
@@ -127,11 +133,8 @@ const ProfileModule = () => {
           <button onClick={() => SetOpen(open => !open)}>Delete</button>
         </div>
       </div>
-
-
-      
     </div>
   );
 };
- 
+
 export default ProfileModule;

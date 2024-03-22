@@ -12,7 +12,7 @@ interface typedatacard {
   const CardSystems: React.FC<{ data: typedatacard }> = React.memo(({ data }) => {
    
   return (
-    <NavLink to={`/systems/${data.id}`}>
+    <NavLink to={`/systems/${data.id}`} className={style.navlink} >
     <div className={style.conteiner}>
         <div className={style.iconblok}>
        <span>

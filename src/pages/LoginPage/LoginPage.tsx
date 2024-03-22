@@ -82,6 +82,7 @@ export default function LoginPage() {
     <div className={css.block}>
       <div className={css.card}>
         <h2 className={css.title}>Welcome!</h2>
+        <p className={css.text}>Log in to your account</p>
         <div className={css.child}>
           <div className={css.inp}>
             <input
@@ -135,7 +136,7 @@ export default function LoginPage() {
         <Link to="/signap" className={css.link}>
           CREATE ACCOUNT
         </Link>
-        {error && <div className={css.error}>{error}</div>}
+        {error && <div className={css.error}><p className={css.errortext}>{error}</p></div>}
       </div>
     </div>
   );
