@@ -1,0 +1,20 @@
+
+ .btn:hover{
+    transition: 0.5s ease-in-out;
+    background: #86C232;
+}
+.btn:hover .icon{
+    transition: 0.5s ease-in-out;
+
+    color: #222629;
+}
+.box{
+    font-family: 'Lato', sans-serif;
+}
+.icc{
+    color: red;
+}
+.icc:hover{
+    color: #86C232;
+      
+}
