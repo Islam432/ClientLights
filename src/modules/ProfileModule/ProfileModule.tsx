@@ -130,7 +130,7 @@ const ProfileModule = () => {
         </div>
 
         <div className={style.ButtonBlokDelete}>
-          <button onClick={() => SetOpen(open => !open)}>Delete</button>
+          <button onClick={() => SetOpen(open => !open)}>Delete account</button>
         </div>
       </div>
     </div>

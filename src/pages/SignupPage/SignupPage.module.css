@@ -95,3 +95,9 @@ justify-content: center;
 .btn:hover{
     background-color: #61892F;
 }
+
+.correct{
+    position: absolute;
+    right: 96px;
+    bottom: 20px;    
+}

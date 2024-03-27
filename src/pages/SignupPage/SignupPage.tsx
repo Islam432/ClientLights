@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import EyeSlashIcon from "../../assets/Eye.svg";
 import EyeSharpIcon from "../../assets/Opened.svg";
+import CorrectIcon from "../../assets/Correct.svg";
+import IncorrectIcon from "../../assets/Incorrect.svg";
 
 export const AufPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -11,6 +13,8 @@ export const AufPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [passwordValid, setPasswordValid] = useState(false);
+  const [confirmPasswordValid, setConfirmPasswordValid] = useState(false);
 
   const validateEmail = () => {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
@@ -30,16 +34,20 @@ export const AufPage = () => {
     setPasswordVisible1((prev) => !prev);
   };
 
-  const handleEmailChange = (e:any) => {
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handlePasswordChange = (e:any) => {
-    setPassword(e.target.value);
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setPasswordValid(validatePassword(newPassword));
   };
 
-  const handleConfirmPasswordChange = (e:any) => {
-    setConfirmPassword(e.target.value);
+  const handleConfirmPasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setConfirmPassword(newPassword);
+    setConfirmPasswordValid(validatePassword(newPassword));
   };
 
   const handleSubmit = () => {
@@ -93,10 +101,25 @@ export const AufPage = () => {
               value={password}
               onChange={handlePasswordChange}
             />
-            {!passwordVisible ? (
-              <img src={EyeSlashIcon} className={css.icon} alt="Eye Slash" onClick={togglePasswordVisibility} />
+            {!passwordValid ? (
+              <img src={IncorrectIcon} className={css.correct} alt="Incorrect" />
             ) : (
-              <img src={EyeSharpIcon} className={css.icon} alt="Eye Sharp" onClick={togglePasswordVisibility} />
+              <img src={CorrectIcon} className={css.correct} alt="Correct" />
+            )}
+            {!passwordVisible ? (
+              <img
+                src={EyeSlashIcon}
+                className={css.icon}
+                alt="Eye Slash"
+                onClick={togglePasswordVisibility}
+              />
+            ) : (
+              <img
+                src={EyeSharpIcon}
+                className={css.icon}
+                alt="Eye Sharp"
+                onClick={togglePasswordVisibility}
+              />
             )}
           </div>
 
@@ -108,10 +131,25 @@ export const AufPage = () => {
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
             />
-            {!passwordVisible1 ? (
-              <img src={EyeSlashIcon} className={css.icon} alt="Eye Slash" onClick={togglePasswordVisibility1} />
+            {!confirmPasswordValid ? (
+              <img src={IncorrectIcon} className={css.correct} alt="Incorrect" />
             ) : (
-              <img src={EyeSharpIcon} className={css.icon} alt="Eye Sharp" onClick={togglePasswordVisibility1} />
+              <img src={CorrectIcon} className={css.correct} alt="Correct" />
+            )}
+            {!passwordVisible1 ? (
+              <img
+                src={EyeSlashIcon}
+                className={css.icon}
+                alt="Eye Slash"
+                onClick={togglePasswordVisibility1}
+              />
+            ) : (
+              <img
+                src={EyeSharpIcon}
+                className={css.icon}
+                alt="Eye Sharp"
+                onClick={togglePasswordVisibility1}
+              />
             )}
           </div>
         </div>
@@ -123,7 +161,7 @@ export const AufPage = () => {
         </Link>
         {error && (
           <div className={css.error}>
-           <p className={css.errortext}> {error}</p>
+            <p className={css.errortext}> {error}</p>
           </div>
         )}
       </div>

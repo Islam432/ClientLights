@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import style from "./index.module.css";
 const DynamicsRoute = () => {
   const { id } = useParams();
+  const example="000"
 
   console.log(id);
   return (
@@ -12,15 +13,15 @@ const DynamicsRoute = () => {
         <div className={style.minblok}>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Voltage</h3>
-            <p>Battery {}</p>
-            <p>Solar Panel {}</p>
-            <p>Sustem {}</p>
+            <p>Battery: <span className={style.ex}>{example}</span> </p>
+            <p>Solar Panel: <span className={style.ex}>{example}</span></p>
+            <p>Sustem: <span className={style.ex}>{example}</span></p>
           </div>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Power</h3>
-            <p>Battery {}</p>
-            <p>Solar Panel {}</p>
-            <p>Sustem {}</p>
+            <p>Battery: <span className={style.ex}>{example}</span></p>
+            <p>Solar Panel: <span className={style.ex}>{example}</span></p>
+            <p>Sustem: <span className={style.ex}>{example}</span></p>
           </div>
         </div>
 
@@ -29,16 +30,16 @@ const DynamicsRoute = () => {
         <div className={style.minblok}>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Current</h3>
-            <p>Battery {}</p>
-            <p>Solar Panel {}</p>
-            <p>Sustem {}</p>
+            <p>Battery: <span className={style.ex}>{example}</span></p>
+            <p>Solar Panel: <span className={style.ex}>{example}</span></p>
+            <p>Sustem: <span className={style.ex}>{example}</span></p>
           </div>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Temperature</h3>
-            <p>Battery {}</p>
+            <p>Battery: <span className={style.ex}>{example}</span></p>
           </div>
         </div>
-        <p className={style.battery}>Remaining Battery: {}</p>
+        <p className={style.battery}>Remaining Battery: <span className={style.ex}>100%</span>{}</p>
       </div>
       <div className={style.blok2}>
 <h4>ID: 01A-B</h4>

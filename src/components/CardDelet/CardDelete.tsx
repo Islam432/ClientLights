@@ -25,8 +25,8 @@ const  DeleteAccount: React.FC<ModalProps>= ({ onClose }) => {
 ) : (
   <div className={css.container}>
     <div className={css.content}>
-        <IoMdClose onClick={onClose} className={css.close}/>
-      {/* <img src="../../../public/mainComponentImage/close.svg" alt="close" className={css.close}/> */}
+        {/* <IoMdClose onClick={onClose} className={css.close}/> */}
+      <img src="../../../public/mainComponentImage/close.svg" alt="close" onClick={onClose} className={css.close}/>
       <img className={css.trash} src="../../../public/mainComponentImage/trash.svg" alt="delete" />
       <p className={css.text}>Are you sure you want to delete your account?</p>
       <div>
