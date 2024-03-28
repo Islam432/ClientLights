@@ -26,10 +26,11 @@
 
 .text {
     text-align: center;
-    font-weight: 600;
+    font-weight:500;
     font-size:25px;
     margin: 15% auto;
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
+    font-family: 'Lato', sans-serif;
 
 }
 

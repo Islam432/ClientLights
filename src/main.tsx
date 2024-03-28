@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage/HomePage.tsx";
 
 import LoginPage from "./pages/LoginPage/LoginPage.tsx";
 import ProtecteRoute from './protectedRoute/protecteRoute';
+import DocsPage from "./pages/DocsPage/DocsPage.tsx"
 
 // import { SideBar } from "./components/SideBar/SideBar.tsx";
 import {AufPage} from "./pages/SignupPage/SignupPage.tsx";
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
           },{
             path: "/profile/change",
             element: <ChangePage />,   
+          },
+          {
+            path: "/docs",
+            element: <DocsPage />,   
           },
           
           {

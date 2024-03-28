@@ -1,0 +1,41 @@
+.div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222629;
+    opacity: 0.7;
+    height: 80px; /* или другое значение */
+    display: flex;
+    justify-content:center;
+    gap: 50px;
+    /* padding: 0 40px; */
+    align-items: center;
+    z-index: 1000; 
+}
+.div1{
+    position: relative;
+    width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    
+}
+.div2{
+    width: 70%;
+}
+.customButton {
+    background: none;
+    color: #86C232;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    letter-spacing: 2px;
+    font-family: 'Lato', sans-serif;
+    margin: 0 10px;
+}
+
+.customButton:hover {
+    color: #61892F;
+    border-bottom: 1px solid #61892F;
+    
+}

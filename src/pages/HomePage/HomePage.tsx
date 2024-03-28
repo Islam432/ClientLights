@@ -98,9 +98,9 @@ const HomePage: React.FC<HomePageProps> = () => {
 
         <h2 className={css.title4}>Our partners</h2>
        <div className={css.blockmini}>
-       <img src={logo1} alt="logo" />
-        <img src={logo2} alt="logo" />
-        <img src={logo3} alt="logo" />
+       <img src={logo1} alt="logo"  className={css.img}/>
+        <img src={logo2} alt="logo"  className={css.img}/>
+        <img src={logo3} alt="logo" className={css.img}/>
        </div>
 
       </div>

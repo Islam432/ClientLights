@@ -1,6 +1,6 @@
 .conteiner{
-    width: 90%;
-margin: 10px;
+    width: 100%;
+margin: 10px 0;
 height: 100px;
     display: flex;
  border-radius: 10px;
@@ -8,6 +8,7 @@ height: 100px;
     justify-content: center;
     transition: box-shadow 0.5s;
     text-decoration: none;
+    margin-bottom: 50px;
 }
 .iconblok{
     display: flex;

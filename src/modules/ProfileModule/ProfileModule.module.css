@@ -50,16 +50,15 @@
 .datatext:focus{
   outline: none;
 }
+.datatext1:focus{
+  outline: none;
+}
 .pen {
   font-size: 20px;
   color: #80aa45;
   display: flex;
 }
-.pen:hover {
-  border-radius: 5px;
-  color: #f70000;
-  background: rgb(138, 138, 230);
-}
+
 .datatext {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   display: flex;
@@ -67,45 +66,49 @@ background: none;
 border: none;
   font-size: clamp(17px, 3vw, 21px);
   color: gray;
+  width: 200px;
+}
+.datatext1{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+background: none;
+border: none;
+  font-size: clamp(17px, 3vw, 21px);
+  color: gray;
+  width: 155px;
 }
 .datatext::placeholder {
-  opacity: 0.2; /* Прозрачность плейсхолдера */
-  transition: opacity 0.3s ease; /* Анимация изменения прозрачности */
+  opacity: 0.2; 
+  transition: opacity 0.3s ease; 
+}
+.datatext1::placeholder {
+  opacity: 0.2; 
+  transition: opacity 0.3s ease; 
 }
 
 .datatext:focus::placeholder {
-  opacity: 0; /* Скрытие плейсхолдера при фокусе */
+  opacity: 0; 
+}
+.datatext1:focus::placeholder {
+  opacity: 0; 
 }
 
 
 .pensel{
 
-height: 100%;
-width: 100%;
-
+height: 140px;
+width: 140px;
 opacity: 0;
   position: absolute;
-  /* bottom: 2.3rem;
-  right: 0.5rem;
-  border: 2px solid #b3f85e;
-width: 
-40px;
- */
-/* height: 40px;
-padding: 5px;
-border-radius: 30px; */
 color: #2b2a2a;
 background: none;
 cursor: pointer;
-/* box-shadow: inset;
-font-size: 10px; */
 font-size: 10px;
-padding: 100px;
+
 
 }
 .pensel:hover{
   transition: 0.2s;
-  scale: 1.1;
   opacity: 100;
   padding: 40px;
   background: white;
@@ -129,8 +132,6 @@ padding: 100px;
   
 }
 .avatar:hover{
- /* opacity: ; */
-  /* background: white; opacity: 0.75; */
   background-color: rgba(255, 255, 255, 25.5); /* Красный фон с прозрачностью 0.5 */
 
 }
@@ -207,7 +208,7 @@ letter-spacing: .1rem;
 
 }
 .ButtonBlokDelete button:hover{
- scale: 1.1;
+ /* scale: 1.1; */
  transition: 0.5s;
   color: #FDFFFF;
 }

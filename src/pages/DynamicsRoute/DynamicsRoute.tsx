@@ -3,7 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import style from "./index.module.css";
 const DynamicsRoute = () => {
   const { id } = useParams();
-  const example="000"
+  const example="003"
 
   console.log(id);
   return (
@@ -15,13 +15,13 @@ const DynamicsRoute = () => {
             <h3 className={style.title}>Voltage</h3>
             <p>Battery: <span className={style.ex}>{example}</span> </p>
             <p>Solar Panel: <span className={style.ex}>{example}</span></p>
-            <p>Sustem: <span className={style.ex}>{example}</span></p>
+            <p>Sуstem: <span className={style.ex}>{example}</span></p>
           </div>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Power</h3>
             <p>Battery: <span className={style.ex}>{example}</span></p>
             <p>Solar Panel: <span className={style.ex}>{example}</span></p>
-            <p>Sustem: <span className={style.ex}>{example}</span></p>
+            <p>Sуstem: <span className={style.ex}>{example}</span></p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ const DynamicsRoute = () => {
             <h3 className={style.title}>Current</h3>
             <p>Battery: <span className={style.ex}>{example}</span></p>
             <p>Solar Panel: <span className={style.ex}>{example}</span></p>
-            <p>Sustem: <span className={style.ex}>{example}</span></p>
+            <p>Sуstem: <span className={style.ex}>{example}</span></p>
           </div>
           <div className={style.dataBlok}>
             <h3 className={style.title}>Temperature</h3>
@@ -42,7 +42,7 @@ const DynamicsRoute = () => {
         <p className={style.battery}>Remaining Battery: <span className={style.ex}>100%</span>{}</p>
       </div>
       <div className={style.blok2}>
-<h4>ID: 01A-B</h4>
+<h4>ID: 0{id}A-B</h4>
 
 <div className={style.blokimg}>
   <img  src="../../../public/mainComponentImage/imageLight.jpg" alt="" />

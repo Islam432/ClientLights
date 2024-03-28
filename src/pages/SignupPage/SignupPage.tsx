@@ -41,13 +41,17 @@ export const AufPage = () => {
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
-    setPasswordValid(validatePassword(newPassword));
+    const isValid = validatePassword(newPassword);
+    console.log("Password valid: ", isValid);
+    setPasswordValid(isValid);
   };
-
+  
   const handleConfirmPasswordChange = (e) => {
     const newPassword = e.target.value;
     setConfirmPassword(newPassword);
-    setConfirmPasswordValid(validatePassword(newPassword));
+    const isValid = newPassword === password;
+    console.log("Confirm password valid: ", isValid);
+    setConfirmPasswordValid(isValid);
   };
 
   const handleSubmit = () => {

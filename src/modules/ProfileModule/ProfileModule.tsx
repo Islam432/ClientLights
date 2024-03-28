@@ -2,6 +2,7 @@ import style from "./ProfileModule.module.css";
 import Avatar from "@mui/material/Avatar";
 import { useContext } from "react";
 import { GiPencil } from "react-icons/gi";
+import hover from "../../assets/hover.svg"
 import { AppContext } from "../../App";
 import { useState } from "react";
 import { TbCameraPlus } from "react-icons/tb";
@@ -27,7 +28,9 @@ const ProfileModule = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [open, SetOpen] = useState(false);
   const [avatar, setAvatar] = useState("../../../public/mainComponentImage/girls.png");
-  const [isInputFocused, setIsInputFocused] = useState(false); // Состояние фокуса на инпуте
+  const [isInputFocused, setIsInputFocused] = useState(false); 
+  const [isInputFocused1, setIsInputFocused1] = useState(false); 
+  
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,13 +79,17 @@ const ProfileModule = () => {
               style={{ display: "none" }}
               onChange={handleFileChange}
             />
-
+{/* 
             <TbCameraPlus
               className={style.pensel}
               onClick={openFilePicker}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-            />
+            /> */}
+            <img src={hover} alt="hover"   className={style.pensel}
+              onClick={openFilePicker}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}/>
           </div>
 
           <div className={style.cont}>
@@ -92,7 +99,7 @@ const ProfileModule = () => {
                 onFocus={() => setIsInputFocused(true)} // Установка состояния при фокусе
                 onBlur={() => setIsInputFocused(false)} // Установка состояния при потере фокуса
                 onChange={(event) => setChange({ ...change, name: event.target.value })}
-                className={style.datatext}
+                className={style.datatext1}
                 type="text"
                 placeholder={change.name}
               />
@@ -105,14 +112,14 @@ const ProfileModule = () => {
             <div className={style.bloktext}>
               <p>Email:</p>
               <input
-                onFocus={() => setIsInputFocused(true)} // Установка состояния при фокусе
-                onBlur={() => setIsInputFocused(false)} // Установка состояния при потере фокуса
+                onFocus={() => setIsInputFocused1(true)} // Установка состояния при фокусе
+                onBlur={() => setIsInputFocused1(false)} // Установка состояния при потере фокуса
                 onChange={(event) => setChange({ ...change, email: event.target.value })}
                 className={style.datatext}
                 type="text"
                 placeholder={change.email}
               />
-              {!isInputFocused && (
+              {!isInputFocused1 && (
                 <div>
                   <GiPencil onClick={(e) => onSubmit} className={style.pen} />
                 </div>

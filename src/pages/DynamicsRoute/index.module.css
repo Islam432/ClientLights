@@ -73,7 +73,8 @@
   }
   .rigtangle {
     border: 1px solid #86c232;
-    height: 18rem;
+    height: 17rem;
+    margin-top: 25px;
   }
   .battery {
     position: absolute;
