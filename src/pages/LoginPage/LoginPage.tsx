@@ -3,20 +3,20 @@ import { useContext, useEffect, useState } from "react";
 import { SignUp } from "../../services/auth.service";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
-import CustomEyeOpenIcon from "../../assets/Opened.svg"
-import CustomEyeClosedIcon from "../../assets/Eye.svg"
+import CustomEyeOpenIcon from "../../assets/Opened.svg";
+import CustomEyeClosedIcon from "../../assets/Eye.svg";
 import { AppContext } from "../../App";
-import Correct from "../../assets/Correct.svg"
-import Incorrect from "../../assets/Incorrect.svg"
+import Correct from "../../assets/Correct.svg";
+import Incorrect from "../../assets/Incorrect.svg";
 export default function LoginPage() {
   const navigate = useNavigate();
-  const [data, setData] = useState({ email: "", password: "" }); // Added password to the state
   const [cook, setCook] = useState(Cookies.get("token"));
   const { auth } = useContext(AppContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const [passwordValid, setPasswordValid] = useState(false);
-
+  const [data, setData] = useState({ email:  "" }); // Added password to the state
+  const [pass, setPassword] = useState({ password:  "" });
   const togglePasswordVisibility = () => {
     setPasswordVisible((prev) => !prev);
   };
@@ -26,19 +26,21 @@ export default function LoginPage() {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-
+  setPassword((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
 
     setError("");
   };
-
+console.log(pass.password)
   const validatePassword = (password: string) => {
-   
     setPasswordValid(
       password.length >= 8 &&
-      /[A-Z]/.test(password) &&
-      /[a-z]/.test(password) &&
-      /\d/.test(password) &&
-      /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)
+        /[A-Z]/.test(password) &&
+        /[a-z]/.test(password) &&
+        /\d/.test(password) &&
+        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)
     );
   };
 
@@ -50,14 +52,16 @@ export default function LoginPage() {
         return;
       }
 
-      validatePassword(data.password);
+      validatePassword(pass.password);
 
       if (!passwordValid) {
         setError("Password does not meet requirements");
         return;
       }
 
-      const dat = await SignUp(data);
+      const blok = { ...data, ...pass };
+      console.log(blok)
+      const dat = await SignUp(blok);
       console.log(dat.config.data);
 
       const newToken = dat.data.token;
@@ -68,7 +72,7 @@ export default function LoginPage() {
       setCook(newToken);
     } catch (error) {
       console.error("Error during SignUp:", error);
-      setError("Invalid credentials"); 
+      setError("Invalid credentials");
     }
   };
 
@@ -92,12 +96,13 @@ export default function LoginPage() {
               name="email"
             />
           </div>
-         
+
           <div className={css.inp}>
             <input
               type={passwordVisible ? "text" : "password"}
               className={css.input}
               placeholder="Password"
+              name="password"
               onChange={(e) => {
                 handler(e);
                 validatePassword(e.target.value);

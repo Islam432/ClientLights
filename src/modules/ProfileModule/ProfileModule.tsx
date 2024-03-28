@@ -1,17 +1,16 @@
 import style from "./ProfileModule.module.css";
 import Avatar from "@mui/material/Avatar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GiPencil } from "react-icons/gi";
 import { AppContext } from "../../App";
 import { useState } from "react";
 import { TbCameraPlus } from "react-icons/tb";
 import DeleteAccount from "../../components/CardDelet/CardDelete";
 import { Link } from "react-router-dom";
+import { Getid, sendFormData } from "../../services/auth.service";
+import Cookies from "js-cookie";
+
 const ProfileModule = () => {
-  const data = {
-    name: "islam",
-    email: "islam2004@gmail.com",
-  };
   interface ChangeState {
     name: string;
     email: string;
@@ -28,11 +27,24 @@ const ProfileModule = () => {
     "../../../public/mainComponentImage/girls.png"
   );
 
+  const cook = Cookies.get("token");
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    change.name && change.email && change.email.includes("@")
-      ? sendFormData()
-      : console.log("  введите  email!");
+    const dataCopy = { ...change, photo: avatar };
+    try {
+      if (change.name && change.email.includes("@")) {
+        // Отправляем данные на сервер
+        const response = await sendFormData(dataCopy);
+
+        setChange(dataCopy);
+        console.log("Данные успешно отправлены на сервер");
+      } else {
+        console.log("Введите email!");
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке данных на сервер:", error);
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,14 +62,29 @@ const ProfileModule = () => {
     document.getElementById("fileInput").click();
   };
   const closeModal = () => {
-   SetOpen(false)
-  }
+    SetOpen(false);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await Getid();
+
+        const email = response.data;
+        console.log(response)
+        // setChange(userData);
+      } catch (error) {
+        console.error("Ошибка при загрузке данных:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className={style.conteiner}>
-
-{open && <DeleteAccount onClose={closeModal}/>}
-  <div className={style.blok}>
+      {open && <DeleteAccount onClose={closeModal} />}
+      <div className={style.blok}>
         <h3>My Profile</h3>
         <div className={style.bordered}>
           <div className={style.imgBlok}>
@@ -84,8 +111,12 @@ const ProfileModule = () => {
           </div>
 
           <div className={style.cont}>
+          <form onSubmit={onSubmit}>
             <div className={style.bloktext}>
               <p>Username:</p>
+          
+
+             
               <input
                 onChange={(event) =>
                   setChange({ ...change, name: event.target.value })
@@ -95,7 +126,7 @@ const ProfileModule = () => {
                 placeholder={change.name}
               />
               <div>
-                <GiPencil onSubmit={(e) => onSubmit} className={style.pen} />
+                <GiPencil onClick={(e) => onSubmit} className={style.pen} />
               </div>
             </div>
             <div className={style.bloktext}>
@@ -108,30 +139,32 @@ const ProfileModule = () => {
                 type="text"
                 placeholder={change.email}
               />
+              
               <div>
                 <GiPencil onClick={(e) => onSubmit} className={style.pen} />
               </div>
+              
             </div>
+            </form>
           </div>
         </div>
 
         <div className={style.ButtonBlok}>
           <Link to="change">
-          <button>Change password</button>
+            <button>Change password</button>
           </Link>
           <div></div>
           <button onClick={auth.logout}>Log out</button>
         </div>
 
         <div className={style.ButtonBlokDelete}>
-          <button onClick={() => SetOpen(open => !open)}>Delete</button>
+          <button onClick={() => SetOpen((open) => !open)}>
+            Delete account
+          </button>
         </div>
       </div>
-
-
-      
     </div>
   );
 };
- 
+
 export default ProfileModule;
